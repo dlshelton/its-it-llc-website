@@ -16,7 +16,9 @@
       "Bash(curl:*)",
       "Bash(node:*)",
       "Bash(ss:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo view:*)"
     ]
   }
 }
