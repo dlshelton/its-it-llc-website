@@ -625,8 +625,10 @@ main {
 .hero-image {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--spacing-lg);
 }
 
 .hero-image img {
@@ -634,16 +636,66 @@ main {
     border-radius: 12px;
 }
 
+/* Hero Stats Grid */
+.hero-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.hero-stat {
+    background-color: var(--color-dark-card);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.hero-stat:hover {
+    border-color: var(--color-green);
+    transform: translateY(-2px);
+}
+
+.hero-stat-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-stat-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-white);
+}
+
+.hero-stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+}
+
+.hero-stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-xs);
+}
+
 /* Testimonial Card in Hero */
 .hero-testimonial {
-    position: absolute;
-    right: -20px;
-    bottom: 40px;
     background-color: var(--color-dark-card);
     border: 1px solid var(--color-green);
     border-radius: 12px;
     padding: var(--spacing-md);
-    max-width: 280px;
+    max-width: 100%;
 }
 
 .hero-testimonial .rating {
