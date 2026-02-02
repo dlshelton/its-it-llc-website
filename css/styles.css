@@ -1068,14 +1068,16 @@ main {
 }
 
 .industry-card:hover {
-    border-color: var(--color-blue);
+    border-color: var(--color-green);
     background-color: var(--color-dark-lighter);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow-green);
 }
 
 .industry-card .icon {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-md);
-    color: var(--color-blue-light);
+    color: var(--color-green-light);
 }
 
 .industry-card h4 {
@@ -1938,7 +1940,7 @@ footer {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--color-blue-light);
+    background: var(--color-green-light);
     transition: width var(--transition-normal);
 }
 
@@ -1949,13 +1951,13 @@ footer {
 .industry-card .icon svg {
     width: 48px;
     height: 48px;
-    stroke: var(--color-blue-light);
+    stroke: var(--color-green-light);
     transition: transform var(--transition-normal), stroke var(--transition-fast);
 }
 
 .industry-card:hover .icon svg {
     transform: scale(1.15);
-    stroke: var(--color-green-light);
+    stroke: var(--color-green);
 }
 
 /* ============================================
