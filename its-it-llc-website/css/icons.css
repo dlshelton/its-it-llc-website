@@ -1,0 +1,275 @@
+/* ============================================
+   IT's IT LLC - SVG Icon Styles
+   ============================================ */
+
+/* Base Icon Styles */
+.icon-svg {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Icon Sizes */
+.icon-sm { width: 16px; height: 16px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 32px; height: 32px; }
+.icon-xl { width: 48px; height: 48px; }
+.icon-2xl { width: 64px; height: 64px; }
+
+/* Service Card Icons */
+.service-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-radius: 12px;
+    margin-bottom: var(--spacing-md);
+    padding: 14px;
+}
+
+.service-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+}
+
+/* Mega Menu Icons */
+.mega-menu-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-radius: 8px;
+    flex-shrink: 0;
+    padding: 8px;
+}
+
+.mega-menu-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+}
+
+/* Contact Icons */
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-dark-card);
+    border: 1px solid var(--color-green);
+    border-radius: 8px;
+    flex-shrink: 0;
+    padding: 12px;
+}
+
+.contact-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--color-green-light);
+}
+
+/* Industry Card Icons */
+.industry-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-blue-light);
+}
+
+.industry-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+}
+
+/* Step Number Icon (large decorative) */
+.step-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: var(--spacing-md);
+}
+
+.step-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+}
+
+/* Process Card Icons */
+.process-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-dark-card);
+    border: 2px solid var(--color-green);
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    padding: 14px;
+}
+
+.process-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--color-green-light);
+}
+
+/* Hero Testimonial Icon */
+.testimonial-icon {
+    color: #fbbf24;
+}
+
+/* Button Arrow Icon */
+.btn-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Social Link Icons */
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+}
+
+/* Nav Phone Icon */
+.nav-phone-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--color-green-light);
+}
+
+/* Inline Icon with Text */
+.icon-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-inline svg {
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+}
+
+/* Hover Effects */
+.icon-hover-scale:hover svg {
+    transform: scale(1.1);
+    transition: transform var(--transition-fast);
+}
+
+.icon-hover-glow:hover {
+    filter: drop-shadow(0 0 8px var(--color-green));
+}
+
+/* Colored Icon Variants */
+.icon-green svg { stroke: var(--color-green-light); }
+.icon-blue svg { stroke: var(--color-blue-light); }
+.icon-white svg { stroke: white; }
+.icon-gray svg { stroke: var(--color-gray-light); }
+
+/* Fill variants for special cases */
+.icon-fill-green svg { fill: var(--color-green); stroke: none; }
+.icon-fill-blue svg { fill: var(--color-blue); stroke: none; }
+
+/* Hero Stats Grid */
+.hero-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-stat {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: rgba(0, 99, 65, 0.1);
+    border: 1px solid var(--color-green);
+    border-radius: 12px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 99, 65, 0.2);
+}
+
+.hero-stat-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.hero-stat-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+}
+
+.hero-stat-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-green-light);
+    margin-bottom: 4px;
+}
+
+.hero-stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-gray-light);
+}
+
+/* Star Rating Icons */
+.star-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #fbbf24;
+    fill: #fbbf24;
+}
+
+/* Responsive Hero Stats */
+@media (max-width: 768px) {
+    .hero-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stat {
+        padding: var(--spacing-md);
+    }
+}

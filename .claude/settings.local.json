@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "WebFetch(domain:itsitllc.com)",
+      "WebFetch(domain:www.milesit.com)",
+      "WebFetch(domain:demo.templatemonster.com)",
+      "Bash(ls -la \"C:\\\\GitWork\\\\its-it-llc-website\\\\assets\\\\logos\"\" 2>/dev/null || echo \"Directory listed via glob already \")",
+      "Bash(python -m http.server:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(where:*)",
+      "Bash(timeout /t 2 /nobreak)",
+      "Bash(npx serve -p 3000)",
+      "Bash(start \"\" \"C:\\\\GitWork\\\\its-it-llc-website\\\\index.html\")",
+      "Bash(curl:*)",
+      "Bash(node:*)"
+    ]
+  }
+}
