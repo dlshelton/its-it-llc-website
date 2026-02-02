@@ -15,7 +15,8 @@
       "Bash(start \"\" \"C:\\\\GitWork\\\\its-it-llc-website\\\\index.html\")",
       "Bash(curl:*)",
       "Bash(node:*)",
-      "Bash(ss:*)"
+      "Bash(ss:*)",
+      "Bash(taskkill:*)"
     ]
   }
 }

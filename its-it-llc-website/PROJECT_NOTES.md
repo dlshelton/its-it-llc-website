@@ -184,6 +184,21 @@ Main.js initializes on DOMContentLoaded. New features auto-initialize.
   - Updated all HTML files with CSS cache-busting version (`?v=5`)
   - Files updated: services.html, contact.html, about.html, industries.html, privacy.html, terms.html
 
+- **Contact Section Alignment Fix** ✅
+  - Fixed misalignment between "Contact Information" and contact form
+  - Added `align-items: start` to `.contact-grid`
+  - Added padding to `.contact-info` for proper visual alignment
+  - Both sections now start at the same vertical position
+
+- **Hero Stat Tiles Hover Effects** ✅
+  - Added eye-catching hover effects matching service cards
+  - Animated green top border using `::before` pseudo-element
+  - Green glow shadow effect (`box-shadow: var(--shadow-glow-green)`)
+  - Icon scale animation on hover (1.1x)
+  - Number color changes to green on hover
+  - Smooth transform and transition effects
+  - Updated CSS version to `?v=6` for cache busting
+
 ### January 30, 2026 (Session 2)
 - Chrome extension connection restored
 - Reviewed all HTML pages for emoji icons and logo consistency
