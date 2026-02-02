@@ -650,11 +650,41 @@ main {
     padding: var(--spacing-md);
     text-align: center;
     transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Animated top border on hover */
+.hero-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-green), var(--color-blue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
 }
 
 .hero-stat:hover {
     border-color: var(--color-green);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow-green);
+}
+
+.hero-stat:hover::before {
+    transform: scaleX(1);
+}
+
+.hero-stat:hover .hero-stat-icon {
+    transform: scale(1.1);
+}
+
+.hero-stat:hover .hero-stat-number {
+    color: var(--color-green-light);
 }
 
 .hero-stat-icon {
@@ -666,6 +696,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform var(--transition-normal);
 }
 
 .hero-stat-icon svg {
@@ -680,6 +711,7 @@ main {
     font-weight: 700;
     color: var(--color-white);
     font-family: var(--font-primary);
+    transition: color var(--transition-normal);
 }
 
 .hero-stat-label {
@@ -1180,6 +1212,11 @@ main {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.contact-info {
+    padding-top: var(--spacing-xl);
 }
 
 .contact-info h3 {
