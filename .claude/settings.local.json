@@ -14,7 +14,8 @@
       "Bash(npx serve -p 3000)",
       "Bash(start \"\" \"C:\\\\GitWork\\\\its-it-llc-website\\\\index.html\")",
       "Bash(curl:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(ss:*)"
     ]
   }
 }

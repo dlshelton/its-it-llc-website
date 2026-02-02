@@ -1,6 +1,6 @@
 # IT's IT LLC Website Project Notes
 
-## Last Updated: January 30, 2026
+## Last Updated: February 2, 2026
 
 ---
 
@@ -88,9 +88,9 @@ Added functions:
 - [ ] Add more animated elements from template demo
 - [ ] Enhance mobile menu experience
 - [ ] Review color consistency across all pages
-- [ ] Add loading animations
+- [x] Add loading animations ✅ (Session 3)
 - [ ] Consider adding testimonial slider
-- [ ] Review form styling and validation
+- [x] Review form styling and validation ✅ (Session 3)
 
 ---
 
@@ -148,6 +148,41 @@ Main.js initializes on DOMContentLoaded. New features auto-initialize.
 ---
 
 ## Session Notes
+
+### February 2, 2026 (Session 3)
+- **Scrolling Partner Logo Carousel** ✅
+  - Converted static partner logo grid to animated infinite-scroll carousel (like Miles IT)
+  - Added 10 partner logos with duplicates for seamless scrolling
+  - CSS-only animation with pause-on-hover
+  - Gradient fade edges for smooth appearance
+  - Added "Trusted Technology Partners" label
+  - Respects prefers-reduced-motion preference
+
+- **Page Loading Animation** ✅
+  - Added `initPageLoader()` function to main.js
+  - Creates loading overlay with pulsing logo and spinner
+  - Smooth fade-out transition when page loads
+  - Content fade-in animation after loader
+
+- **Hero Section Layout Fix** ✅
+  - Fixed testimonial card overlapping stat tiles issue
+  - Added proper CSS for `.hero-stats-grid` with 3-column layout
+  - Styled stat cards with icons, hover effects, and proper spacing
+  - Testimonial card now flows below stats instead of absolute positioning
+
+- **Form Styling Enhancements** ✅
+  - Added hover states for form inputs
+  - Enhanced focus states with green glow effect (`box-shadow`)
+  - Placeholder opacity reduction on focus
+  - Basic validation styling (valid/invalid states)
+  - Submit button shimmer effect on hover
+  - Added `.required` label indicator styling
+
+- **Header/Navigation Consistency** ✅
+  - Added "Resources" menu to services.html
+  - Added "Resources" link to contact.html
+  - Updated all HTML files with CSS cache-busting version (`?v=5`)
+  - Files updated: services.html, contact.html, about.html, industries.html, privacy.html, terms.html
 
 ### January 30, 2026 (Session 2)
 - Chrome extension connection restored
