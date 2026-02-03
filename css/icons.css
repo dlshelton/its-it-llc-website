@@ -161,34 +161,27 @@
     stroke: currentColor;
 }
 
-/* Nav Phone Icon - Styled like hero stat icons */
+/* Nav Phone Icon - Styled exactly like hero stat icons (24/7 tile) */
 .nav-phone-icon {
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-dark-card);
-    border: 2px solid var(--color-green);
-    border-radius: 50%;
-    color: var(--color-green-light);
-    transition: all var(--transition-fast);
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-radius: 12px;
+    transition: transform var(--transition-normal);
 }
 
 .nav-phone-icon svg {
     width: 24px;
     height: 24px;
-    stroke: currentColor;
-    fill: none;
+    stroke: none;
+    fill: var(--color-white);
 }
 
 .nav-phone:hover .nav-phone-icon {
-    background-color: var(--color-green);
-    color: var(--color-white);
-}
-
-.nav-phone:hover .nav-phone-icon svg {
-    stroke: var(--color-white);
+    transform: scale(1.1);
 }
 
 /* Inline Icon with Text */
