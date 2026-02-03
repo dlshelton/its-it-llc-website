@@ -21,7 +21,8 @@
       "Bash(gh repo view:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nFix mobile menu for tablets, landscape phones, and foldables\n\n- Increased mobile menu breakpoint from 768px to 1024px\n- Mobile hamburger menu now shows on all devices under 1024px width\n- Prevents mega-menus from overflowing off-screen on landscape/foldable devices\n- Fixed industry cards to use green color scheme \\(matching main page\\)\n- Added icons.css to all pages for consistent phone icon\n- Standardized nav-phone-icon class across all pages\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(grep:*)"
     ]
   }
 }
