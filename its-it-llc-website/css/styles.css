@@ -1565,21 +1565,7 @@ footer {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1024px) {
-    .mega-menu {
-        min-width: 500px;
-    }
-
-    .mega-menu-grid.industries-grid {
-        grid-template-columns: repeat(2, 1fr);
-        min-width: 500px;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
+    /* Switch to mobile menu at 1024px to handle tablets, landscape phones, and foldables */
     .nav-links {
         display: none;
         position: fixed;
@@ -1592,6 +1578,7 @@ footer {
         padding: var(--spacing-lg);
         gap: 0;
         overflow-y: auto;
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -1630,6 +1617,7 @@ footer {
     .mega-menu-grid,
     .mega-menu-grid.industries-grid {
         grid-template-columns: 1fr;
+        min-width: unset;
     }
 
     .mobile-menu-btn {
@@ -1639,6 +1627,13 @@ footer {
     .nav-cta {
         display: none;
     }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
 
     .hero-container {
         grid-template-columns: 1fr;
