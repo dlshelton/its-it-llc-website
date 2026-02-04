@@ -702,7 +702,8 @@ main {
 .hero-stat-icon svg {
     width: 24px;
     height: 24px;
-    fill: var(--color-white);
+    stroke: var(--color-white);
+    fill: none;
 }
 
 .hero-stat-number {

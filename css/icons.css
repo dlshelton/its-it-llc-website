@@ -176,8 +176,8 @@
 .nav-phone-icon svg {
     width: 24px;
     height: 24px;
-    stroke: none;
-    fill: var(--color-white);
+    stroke: var(--color-white);
+    fill: none;
 }
 
 .nav-phone:hover .nav-phone-icon {
