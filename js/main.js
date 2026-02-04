@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initBackToTop();
     initFadeInAnimations();
+    initClientPortal();
 });
 
 /**
@@ -590,4 +591,48 @@ function initCounterAnimations() {
     }, { threshold: 0.5 });
 
     counters.forEach(counter => observer.observe(counter));
+}
+
+/**
+ * Client Portal Sidebar
+ * Handles the slide-out client portal panel
+ */
+function initClientPortal() {
+    const toggle = document.getElementById('clientPortalToggle');
+    const sidebar = document.getElementById('clientPortalSidebar');
+    const overlay = document.getElementById('clientPortalOverlay');
+    const closeBtn = document.getElementById('clientPortalClose');
+
+    // Exit if elements don't exist on this page
+    if (!toggle || !sidebar) return;
+
+    // Open sidebar
+    toggle.addEventListener('click', function() {
+        sidebar.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close sidebar - close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSidebar);
+    }
+
+    // Close sidebar - overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    }
+
+    // Close sidebar - Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+            closeSidebar();
+        }
+    });
+
+    function closeSidebar() {
+        sidebar.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
