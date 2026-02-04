@@ -3,13 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service for IT's IT LLC - Read our terms and conditions for using our website and services.">
+    <meta name="description" content="Terms of Service for IT's IT LLC - Read our terms and conditions for managed IT services, cybersecurity, and telecommunications.">
     <title>Terms of Service | IT's IT Solutions</title>
-    <link rel="stylesheet" href="css/styles.css?v=16">
+    <link rel="stylesheet" href="css/styles.css?v=17">
     <link rel="stylesheet" href="css/icons.css?v=5">
     <link rel="icon" type="image/png" href="assets/logos/ItsITLogo9_11_19.png">
 </head>
 <body>
+    <!-- Client Portal Sidebar -->
+    <div class="client-portal-overlay" id="clientPortalOverlay"></div>
+    <aside class="client-portal-sidebar" id="clientPortalSidebar">
+        <div class="client-portal-header">
+            <img src="assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions">
+            <button class="client-portal-close" id="clientPortalClose" aria-label="Close client portal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <h3>CLIENT PORTAL</h3>
+        <nav class="client-portal-nav">
+            <a href="https://itsitllc.ITClientPortal.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Client Account Access
+            </a>
+            <a href="https://helpit.screenconnect.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Remote Help
+            </a>
+            <a href="https://itsitllc.connectboosterportal.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                Pay Invoice
+            </a>
+            <a href="https://phones.itsitllc.com/login" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Phone Web Portal
+            </a>
+            <a href="https://app.inkyphishfence.com/user-settings/summary" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Spam Filter
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Client Portal Toggle Button -->
+    <button class="client-portal-toggle" id="clientPortalToggle" aria-label="Open client portal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Client Portal</span>
+    </button>
+
     <!-- Header -->
     <header id="header">
         <nav class="navbar">
@@ -231,73 +291,139 @@
                     <span class="current">Terms of Service</span>
                 </div>
                 <h1>Terms of Service</h1>
-                <p>Please read these terms carefully before using our website or services.</p>
+                <p>Thank you for your business! Please review our terms and conditions.</p>
             </div>
         </section>
 
         <!-- Terms of Service Content -->
         <section class="about-section">
             <div class="container">
-                <div style="max-width: 800px; margin: 0 auto;">
+                <div style="max-width: 900px; margin: 0 auto;">
                     <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl);">
-                        <strong>Last Updated:</strong> January 2025
+                        <strong>Effective Date:</strong> January 1, 2025 (Version 12.0)
                     </p>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Acceptance of Terms</h2>
-                    <p style="margin-bottom: var(--spacing-xl);">
-                        By accessing or using the IT's IT LLC website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
-                    </p>
-
-                    <h2 style="margin-bottom: var(--spacing-md);">Use of Services</h2>
+                    <h2 style="margin-bottom: var(--spacing-md);">Service Offerings</h2>
                     <p style="margin-bottom: var(--spacing-lg);">
-                        Our services are provided for lawful business purposes only. You agree not to:
+                        IT's IT LLC provides comprehensive managed IT services including:
                     </p>
                     <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); padding-left: 1.5rem;">
-                        <li>Use our services for any illegal or unauthorized purpose</li>
-                        <li>Violate any laws in your jurisdiction</li>
-                        <li>Interfere with or disrupt our services or servers</li>
-                        <li>Attempt to gain unauthorized access to any portion of our services</li>
-                        <li>Use our services to transmit malware, viruses, or harmful code</li>
+                        <li>Managed IT Services (vEnterprise plans)</li>
+                        <li>Cybersecurity monitoring and threat detection</li>
+                        <li>Microsoft Cloud Solutions</li>
+                        <li>VoIP and telecommunications management</li>
+                        <li>Virtual CTO/CIO/CSO advisory services</li>
+                        <li>Professional consulting</li>
                     </ul>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Service Agreements</h2>
+                    <h2 style="margin-bottom: var(--spacing-md);">Billing Structure</h2>
+                    <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); padding-left: 1.5rem;">
+                        <li>One-time setup fees</li>
+                        <li>Monthly service fees billed in advance</li>
+                        <li>Usage-based charges for consumption services</li>
+                        <li>Professional services at hourly rates</li>
+                        <li>Automatic ACH debit on the 1st of each month</li>
+                        <li>Annual rate review with 60-day notice</li>
+                    </ul>
+
+                    <h2 style="margin-bottom: var(--spacing-md);">Payment Terms</h2>
+                    <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-lg); padding-left: 1.5rem;">
+                        <li>5% late fee on overdue amounts</li>
+                        <li>2% monthly interest (or legal maximum)</li>
+                        <li>Service suspension after 10+ days past due</li>
+                        <li>Customer responsible for collection costs</li>
+                    </ul>
                     <p style="margin-bottom: var(--spacing-xl);">
-                        Specific IT services provided by IT's IT LLC are governed by separate service agreements. These Terms of Service apply to the use of our website and general inquiries. For managed IT services, cybersecurity solutions, and other professional services, a separate Master Service Agreement (MSA) will outline the specific terms, service levels, and obligations of both parties.
+                        For billing inquiries, please contact: <a href="mailto:billing@itsitllc.com">billing@itsitllc.com</a>
                     </p>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Intellectual Property</h2>
+                    <h2 style="margin-bottom: var(--spacing-md);">Service Term</h2>
+                    <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); padding-left: 1.5rem;">
+                        <li>Initial one-year commitment with automatic renewal</li>
+                        <li>90-day termination notice required</li>
+                        <li>Immediate due date for outstanding charges upon termination</li>
+                        <li>Minimum device commitment applies through contract term</li>
+                    </ul>
+
+                    <h2 style="margin-bottom: var(--spacing-md);">Data & Security</h2>
                     <p style="margin-bottom: var(--spacing-xl);">
-                        The content on this website, including but not limited to text, graphics, logos, images, and software, is the property of IT's IT LLC and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without our express written permission.
+                        Customer retains all rights to their data. Provider maintains industry-standard encryption, multi-factor authentication, and regular security assessments. Backup services follow specifications in Service Orders.
                     </p>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Disclaimer of Warranties</h2>
+                    <h2 style="margin-bottom: var(--spacing-md);">Service Level Agreements</h2>
+                    <p style="margin-bottom: var(--spacing-lg);">
+                        Response times are based on priority level:
+                    </p>
+                    <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-lg); padding-left: 1.5rem;">
+                        <li><strong>Critical:</strong> 1 hour response time</li>
+                        <li><strong>High:</strong> 4 hour response time</li>
+                        <li><strong>Medium:</strong> 8 hour response time</li>
+                        <li><strong>Low:</strong> Next business day</li>
+                    </ul>
                     <p style="margin-bottom: var(--spacing-xl);">
-                        This website and its content are provided "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. IT's IT LLC does not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.
+                        Core services maintain 99.5% monthly availability excluding scheduled maintenance.
                     </p>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Limitation of Liability</h2>
+                    <div style="background-color: var(--color-dark-card); padding: var(--spacing-lg); border-radius: 12px; border: 1px solid var(--color-dark-border); margin-bottom: var(--spacing-xl);">
+                        <h2 style="margin-bottom: var(--spacing-md); color: var(--color-green);">Warranty Disclaimer</h2>
+                        <p style="text-transform: uppercase; font-size: 0.9rem; line-height: 1.6;">
+                            WE WARRANT THAT SERVICES WILL BE PERFORMED IN A PROFESSIONAL MANNER. EXCEPT AS EXPRESSLY SET FORTH HEREIN, WE DISCLAIM ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+                        </p>
+                        <p style="margin-top: var(--spacing-md); text-transform: uppercase; font-size: 0.9rem; line-height: 1.6;">
+                            OUR MAXIMUM LIABILITY FOR ANY CLAIM SHALL NOT EXCEED THE LESSER OF: (A) TOTAL FEES PAID IN THE PRECEDING 12 MONTHS, OR (B) $250,000. WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES INCLUDING LOSS OF PROFITS, BUSINESS, GOODWILL, OR DATA.
+                        </p>
+                    </div>
+
+                    <div style="background-color: rgba(231, 76, 60, 0.1); padding: var(--spacing-lg); border-radius: 12px; border: 1px solid rgba(231, 76, 60, 0.3); margin-bottom: var(--spacing-xl);">
+                        <h2 style="margin-bottom: var(--spacing-md); color: #e74c3c;">Critical E911 VoIP Warning</h2>
+                        <p style="text-transform: uppercase; font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-md);">
+                            VoIP E911 SERVICE DOES NOT WORK LIKE TRADITIONAL 911.
+                        </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Service limitations include:
+                        </p>
+                        <ul style="color: var(--color-text-muted); padding-left: 1.5rem; margin-bottom: var(--spacing-md);">
+                            <li>Potential location inaccuracy</li>
+                            <li>Outages during power or internet failures</li>
+                            <li>Possible incorrect emergency response routing</li>
+                        </ul>
+                        <p style="font-weight: 600;">
+                            Customers must register accurate physical addresses and maintain alternative emergency contact methods.
+                        </p>
+                    </div>
+
+                    <h2 style="margin-bottom: var(--spacing-md);">Telecommunications Compliance</h2>
+                    <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); padding-left: 1.5rem;">
+                        <li>FCC regulatory compliance</li>
+                        <li>CPNI (Customer Proprietary Network Information) protection</li>
+                        <li>Kari's Law and Ray Baum's Act compliance</li>
+                        <li>TCPA requirements for automated calls/texts</li>
+                    </ul>
+
+                    <h2 style="margin-bottom: var(--spacing-md);">Non-Solicitation</h2>
                     <p style="margin-bottom: var(--spacing-xl);">
-                        In no event shall IT's IT LLC, its directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the website or services, regardless of whether such damages are based on warranty, contract, tort, or any other legal theory.
+                        During the term of service and for two (2) years following termination, Customer agrees not to directly solicit for employment any IT's IT LLC employee without written consent. Violation results in $75,000 liquidated damages per occurrence.
                     </p>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Indemnification</h2>
+                    <h2 style="margin-bottom: var(--spacing-md);">Refund Policy</h2>
                     <p style="margin-bottom: var(--spacing-xl);">
-                        You agree to indemnify and hold harmless IT's IT LLC and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorney fees) arising out of or related to your use of the website or services, or your violation of these Terms of Service.
+                        <strong>All sales are final.</strong> Refunds for hardware or software products depend on distributor RMA (Return Merchandise Authorization) approval only.
                     </p>
 
-                    <h2 style="margin-bottom: var(--spacing-md);">Third-Party Links</h2>
-                    <p style="margin-bottom: var(--spacing-xl);">
-                        Our website may contain links to third-party websites or services that are not owned or controlled by IT's IT LLC. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.
+                    <h2 style="margin-bottom: var(--spacing-md);">Insurance Coverage</h2>
+                    <p style="margin-bottom: var(--spacing-lg);">
+                        IT's IT LLC maintains the following insurance coverage:
                     </p>
+                    <ul style="color: var(--color-text-muted); margin-bottom: var(--spacing-xl); padding-left: 1.5rem;">
+                        <li>$2,000,000 general liability</li>
+                        <li>$1,000,000 cyber liability</li>
+                        <li>$1,000,000 professional liability (E&O)</li>
+                        <li>Workers' compensation as required by law</li>
+                    </ul>
 
                     <h2 style="margin-bottom: var(--spacing-md);">Governing Law</h2>
                     <p style="margin-bottom: var(--spacing-xl);">
-                        These Terms of Service shall be governed by and construed in accordance with the laws of the State of Florida, without regard to its conflict of law provisions. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the state and federal courts located in Lee County, Florida.
-                    </p>
-
-                    <h2 style="margin-bottom: var(--spacing-md);">Changes to Terms</h2>
-                    <p style="margin-bottom: var(--spacing-xl);">
-                        We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to the website. Your continued use of the website after any changes constitutes your acceptance of the new terms.
+                        These Terms of Service shall be governed by and construed in accordance with the laws of the State of Florida. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the state and federal courts located in Lee County, Florida.
                     </p>
 
                     <h2 style="margin-bottom: var(--spacing-md);">Contact Us</h2>
@@ -309,7 +435,8 @@
                         <p style="margin-bottom: var(--spacing-sm);">2503 Del Prado Blvd. South, Suite 405</p>
                         <p style="margin-bottom: var(--spacing-sm);">Cape Coral, FL 33904</p>
                         <p style="margin-bottom: var(--spacing-sm);">Phone: <a href="tel:239-935-9891">239-935-9891</a></p>
-                        <p>Email: <a href="mailto:GetStarted@ItsITLLC.com">GetStarted@ItsITLLC.com</a></p>
+                        <p style="margin-bottom: var(--spacing-sm);">Email: <a href="mailto:support@itsitllc.com">support@itsitllc.com</a></p>
+                        <p>Billing: <a href="mailto:billing@itsitllc.com">billing@itsitllc.com</a></p>
                     </div>
                 </div>
             </div>

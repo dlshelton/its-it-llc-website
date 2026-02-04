@@ -2381,3 +2381,182 @@ footer {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* ============================================
+   CLIENT PORTAL SIDEBAR
+   ============================================ */
+
+/* Toggle Button - Fixed on right side */
+.client-portal-toggle {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border: none;
+    padding: 1rem 0.75rem;
+    border-radius: 12px 0 0 12px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.client-portal-toggle:hover {
+    padding-right: 1rem;
+    box-shadow: -6px 0 30px rgba(0, 99, 65, 0.4);
+}
+
+.client-portal-toggle svg {
+    color: var(--color-white);
+    stroke: var(--color-white);
+}
+
+.client-portal-toggle span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Overlay */
+.client-portal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.client-portal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar Panel */
+.client-portal-sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-dark-lighter) 100%);
+    z-index: 1999;
+    padding: var(--spacing-lg);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    transition: right var(--transition-normal);
+    overflow-y: auto;
+}
+
+.client-portal-sidebar.active {
+    right: 0;
+}
+
+/* Sidebar Header */
+.client-portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-dark-border);
+}
+
+.client-portal-header img {
+    width: 100px;
+    height: auto;
+}
+
+.client-portal-close {
+    background: transparent;
+    border: 1px solid var(--color-dark-border);
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--color-text-muted);
+}
+
+.client-portal-close:hover {
+    background: var(--color-dark-card);
+    border-color: var(--color-green);
+    color: var(--color-white);
+}
+
+/* Sidebar Title */
+.client-portal-sidebar h3 {
+    color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-sm);
+}
+
+/* Navigation Links */
+.client-portal-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.client-portal-nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: 1rem;
+    background: var(--color-dark-card);
+    border: 1px solid var(--color-dark-border);
+    border-radius: 10px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all var(--transition-normal);
+}
+
+.client-portal-nav a:hover {
+    background: linear-gradient(135deg, var(--color-green), var(--color-blue));
+    border-color: transparent;
+    transform: translateX(-5px);
+    box-shadow: 5px 0 20px rgba(0, 99, 65, 0.3);
+}
+
+.client-portal-nav a svg {
+    flex-shrink: 0;
+    color: var(--color-green-light);
+    stroke: var(--color-green-light);
+    transition: all var(--transition-fast);
+}
+
+.client-portal-nav a:hover svg {
+    color: var(--color-white);
+    stroke: var(--color-white);
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .client-portal-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .client-portal-toggle {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .client-portal-toggle span {
+        font-size: 0.75rem;
+    }
+}
