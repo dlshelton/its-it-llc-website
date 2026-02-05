@@ -889,7 +889,7 @@ main {
    ABOUT / INTRO SECTION
    ============================================ */
 .about-section {
-    background-color: var(--color-dark);
+    background: linear-gradient(to right, var(--color-dark) 0%, var(--color-dark) 40%, var(--color-dark-lighter) 70%, #2a3a4d 100%);
 }
 
 .about-grid {
