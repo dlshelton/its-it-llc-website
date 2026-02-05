@@ -889,8 +889,7 @@ main {
    ABOUT / INTRO SECTION
    ============================================ */
 .about-section {
-    background: linear-gradient(to right, var(--color-dark) 0%, var(--color-dark) 40%, var(--color-dark-lighter) 70%, #2a3a4d 100%);
-    position: relative;
+    background-color: var(--color-dark);
 }
 
 .about-grid {
@@ -925,11 +924,8 @@ main {
 }
 
 .about-image img {
-    border-radius: 12px;
     max-width: 350px;
     height: auto;
-    /* Subtle shadow to blend logo with gradient background */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
