@@ -577,24 +577,6 @@ main {
     pointer-events: none;
 }
 
-/* Ghosted watermark logo behind hero content */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 700px;
-    background-image: url('../assets/logos/ItsITLogo9_11_19.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 0;
-}
-
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
