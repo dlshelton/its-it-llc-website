@@ -22,11 +22,11 @@
     --color-gray: #585858;
     --color-gray-light: #b0b0b0;
 
-    /* Dark Theme Colors */
-    --color-dark: #0f1724;
-    --color-dark-lighter: #1a2332;
-    --color-dark-card: #1e2a3a;
-    --color-dark-border: #2d3a4d;
+    /* Dark Theme Colors - Lightened for better feel */
+    --color-dark: #141d2b;
+    --color-dark-lighter: #1e2a3a;
+    --color-dark-card: #243044;
+    --color-dark-border: #3a4a5d;
 
     /* Light Colors */
     --color-white: #ffffff;
@@ -1508,6 +1508,25 @@ main {
 
 .contact-item a {
     color: var(--color-green-light);
+}
+
+/* Contact Map */
+.contact-map {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-container {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-dark-border);
+}
+
+.map-address {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
 }
 
 .social-links {
