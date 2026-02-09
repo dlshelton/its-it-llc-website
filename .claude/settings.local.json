@@ -25,7 +25,8 @@
       "Bash(grep:*)",
       "Bash(ls:*)",
       "Bash(git revert:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git fetch:*)"
     ]
   }
 }
