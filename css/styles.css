@@ -1681,11 +1681,10 @@ main {
 }
 
 .social-links a svg {
-    width: 24px;
-    height: 24px;
-    stroke: var(--color-green-light);
-    fill: none;
-    transition: stroke var(--transition-fast);
+    width: 20px;
+    height: 20px;
+    fill: var(--color-green-light);
+    transition: fill var(--transition-fast);
 }
 
 .social-links a:hover {
@@ -1695,7 +1694,7 @@ main {
 }
 
 .social-links a:hover svg {
-    stroke: var(--color-white);
+    fill: var(--color-white);
 }
 
 /* Contact Form */
