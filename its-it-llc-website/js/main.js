@@ -205,7 +205,7 @@ function initMobileDropdowns() {
         if (dropdown && link) {
             link.addEventListener('click', function(e) {
                 // Only handle click on mobile
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     // If there's a dropdown, toggle it
                     if (dropdown) {
                         e.preventDefault();
@@ -227,7 +227,7 @@ function initMobileDropdowns() {
 
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1024) {
             navItems.forEach(item => item.classList.remove('active'));
             document.getElementById('navLinks')?.classList.remove('active');
             document.getElementById('mobileMenuBtn')?.classList.remove('active');
@@ -318,7 +318,6 @@ function initContactForm() {
 
             // Here you would normally send the data to a server
             // For now, we'll just show a success message
-            console.log('Form submitted:', data);
             showNotification('Thank you for your message! We\'ll be in touch soon.', 'success');
             form.reset();
         });
