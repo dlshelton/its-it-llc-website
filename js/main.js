@@ -323,16 +323,18 @@ function initContactForm() {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending... <span class="arrow">→</span>';
 
-        // Get reCAPTCHA v3 token
+        // Get reCAPTCHA v3 token (skip if grecaptcha not loaded, e.g. test mode)
         const siteKey = form.dataset.recaptchaKey;
-        try {
-            const recaptchaToken = await grecaptcha.execute(siteKey, { action: 'contact_form' });
-            document.getElementById('recaptchaToken').value = recaptchaToken;
-        } catch (err) {
-            showNotification('Security verification failed. Please refresh and try again.', 'error');
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnHTML;
-            return;
+        if (typeof grecaptcha !== 'undefined' && siteKey && !siteKey.includes('YOUR_')) {
+            try {
+                const recaptchaToken = await grecaptcha.execute(siteKey, { action: 'contact_form' });
+                document.getElementById('recaptchaToken').value = recaptchaToken;
+            } catch (err) {
+                showNotification('Security verification failed. Please refresh and try again.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHTML;
+                return;
+            }
         }
 
         // Submit via AJAX
