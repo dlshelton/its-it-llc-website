@@ -11,6 +11,14 @@
  * - Email delivery via PHPMailer/365 SMTP
  */
 
+// Load PHPMailer classes (must be at top-level for 'use' statements)
+require __DIR__ . '/vendor/PHPMailer/Exception.php';
+require __DIR__ . '/vendor/PHPMailer/PHPMailer.php';
+require __DIR__ . '/vendor/PHPMailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 // Load configuration
 $configFile = __DIR__ . '/config.php';
 if (!file_exists($configFile)) {
@@ -71,11 +79,15 @@ if (!checkRateLimit($clientIP, $config['rate_limit'])) {
 // ============================================
 // Step 5: reCAPTCHA v3 verification
 // ============================================
-$recaptchaToken = $_POST['g-recaptcha-response'] ?? '';
-if (empty($recaptchaToken) || !verifyRecaptcha($recaptchaToken, $config['recaptcha']['secret_key'], $config['recaptcha']['threshold'])) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Security verification failed. Please refresh and try again.']);
-    exit;
+$testMode = $config['test_mode'] ?? false;
+
+if (!$testMode) {
+    $recaptchaToken = $_POST['g-recaptcha-response'] ?? '';
+    if (empty($recaptchaToken) || !verifyRecaptcha($recaptchaToken, $config['recaptcha']['secret_key'], $config['recaptcha']['threshold'])) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Security verification failed. Please refresh and try again.']);
+        exit;
+    }
 }
 
 // ============================================
@@ -135,47 +147,60 @@ if (!empty($phone) && !preg_match('/^[\d\s\-\(\)\+\.]+$/', $phone)) {
 // ============================================
 // Step 8: Build and send email via PHPMailer
 // ============================================
-require __DIR__ . '/vendor/PHPMailer/Exception.php';
-require __DIR__ . '/vendor/PHPMailer/PHPMailer.php';
-require __DIR__ . '/vendor/PHPMailer/SMTP.php';
+$sourceLabel = ($formSource === 'contact') ? 'Contact Page' : 'Website';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+if ($testMode) {
+    // TEST MODE: Log the email to a file instead of sending
+    $logFile = $config['test_log'] ?? __DIR__ . '/test_submissions.log';
+    $logEntry  = "\n" . str_repeat('=', 60) . "\n";
+    $logEntry .= "[TEST MODE] Form Submission at " . date('Y-m-d H:i:s') . "\n";
+    $logEntry .= str_repeat('=', 60) . "\n";
+    $logEntry .= "Subject: [$sourceLabel Inquiry] New message from $name\n";
+    $logEntry .= "From: {$config['mail']['from_email']} ({$config['mail']['from_name']})\n";
+    $logEntry .= "To: {$config['mail']['to_email']} ({$config['mail']['to_name']})\n";
+    $logEntry .= "Reply-To: $email ($name)\n\n";
+    $logEntry .= buildEmailPlainText($name, $email, $phone, $company, $service, $message, $formSource);
+    $logEntry .= str_repeat('=', 60) . "\n";
 
-try {
-    $mail = new PHPMailer(true);
+    file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
+    error_log("[TEST MODE] Form submission logged to $logFile");
 
-    // SMTP configuration
-    $mail->isSMTP();
-    $mail->Host       = $config['smtp']['host'];
-    $mail->SMTPAuth   = true;
-    $mail->Username   = $config['smtp']['username'];
-    $mail->Password   = $config['smtp']['password'];
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = $config['smtp']['port'];
-    $mail->CharSet    = 'UTF-8';
+} else {
+    // PRODUCTION: Send via PHPMailer/SMTP
+    try {
+        $mail = new PHPMailer(true);
 
-    // Email addresses
-    $mail->setFrom($config['mail']['from_email'], $config['mail']['from_name']);
-    $mail->addAddress($config['mail']['to_email'], $config['mail']['to_name']);
-    $mail->addReplyTo($email, $name);
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host       = $config['smtp']['host'];
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $config['smtp']['username'];
+        $mail->Password   = $config['smtp']['password'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = $config['smtp']['port'];
+        $mail->CharSet    = 'UTF-8';
 
-    // Subject line with source identifier
-    $sourceLabel = ($formSource === 'contact') ? 'Contact Page' : 'Website';
-    $mail->Subject = "[$sourceLabel Inquiry] New message from $name";
+        // Email addresses
+        $mail->setFrom($config['mail']['from_email'], $config['mail']['from_name']);
+        $mail->addAddress($config['mail']['to_email'], $config['mail']['to_name']);
+        $mail->addReplyTo($email, $name);
 
-    // Email body
-    $mail->isHTML(true);
-    $mail->Body    = buildEmailHTML($name, $email, $phone, $company, $service, $message, $formSource);
-    $mail->AltBody = buildEmailPlainText($name, $email, $phone, $company, $service, $message, $formSource);
+        // Subject line with source identifier
+        $mail->Subject = "[$sourceLabel Inquiry] New message from $name";
 
-    $mail->send();
+        // Email body
+        $mail->isHTML(true);
+        $mail->Body    = buildEmailHTML($name, $email, $phone, $company, $service, $message, $formSource);
+        $mail->AltBody = buildEmailPlainText($name, $email, $phone, $company, $service, $message, $formSource);
 
-} catch (Exception $e) {
-    error_log("IT's IT Contact Form - PHPMailer Error: " . $mail->ErrorInfo);
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Unable to send message. Please call us at (239) 935-9891.']);
-    exit;
+        $mail->send();
+
+    } catch (Exception $e) {
+        error_log("IT's IT Contact Form - PHPMailer Error: " . $mail->ErrorInfo);
+        http_response_code(500);
+        echo json_encode(['success' => false, 'message' => 'Unable to send message. Please call us at (239) 935-9891.']);
+        exit;
+    }
 }
 
 // ============================================
