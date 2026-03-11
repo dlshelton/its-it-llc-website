@@ -9,10 +9,10 @@
 return [
     // SMTP settings for Microsoft 365 Exchange
     'smtp' => [
-        'host'       => 'smtp.office365.com',
-        'port'       => 587,
+        'host'       => 'itsitllc-com.mail.protection.outlook.com',
+        'port'       => 25,
         'username'   => 'GetStarted@ItsITLLC.com',
-        'password'   => 'YOUR_APP_PASSWORD_HERE',
+//        'password'   => 'YOUR_APP_PASSWORD_HERE',
         'encryption' => 'tls',
     ],
 
@@ -26,8 +26,8 @@ return [
 
     // Google reCAPTCHA v3
     'recaptcha' => [
-        'site_key'   => 'YOUR_RECAPTCHA_SITE_KEY',
-        'secret_key' => 'YOUR_RECAPTCHA_SECRET_KEY',
+        'site_key'   => '6LfTNYcsAAAAACNq7hvPoRW6bb4m3G0wo3C97QpU',
+        'secret_key' => '6LfTNYcsAAAAANCgJc5HSZrMDKhhdhKkRTlmhNe3',
         'threshold'  => 0.5,
     ],
 
