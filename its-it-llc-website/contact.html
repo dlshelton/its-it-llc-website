@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact IT's IT LLC - Get in touch for IT services in Cape Coral, Fort Myers, Naples and Southwest Florida. Call 239-935-9891.">
     <title>Contact Us | IT's IT Solutions</title>
-    <link rel="stylesheet" href="css/styles.css?v=34">
+    <link rel="stylesheet" href="css/styles.css?v=35">
     <link rel="stylesheet" href="css/icons.css?v=6">
     <link rel="icon" type="image/png" href="assets/logos/ItsITLogo9_11_19.png">
+    <!-- Google reCAPTCHA v3 - replace YOUR_RECAPTCHA_SITE_KEY with actual key -->
+    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
 </head>
 <body>
     <!-- Client Portal Sidebar -->
@@ -382,7 +384,15 @@
 
                     <div class="contact-form-wrapper">
                         <h3>Send Us a Message</h3>
-                        <form class="contact-form" id="contactForm">
+                        <form class="contact-form" id="contactForm" action="php/contact-handler.php" method="POST" data-recaptcha-key="YOUR_RECAPTCHA_SITE_KEY">
+                            <input type="hidden" name="csrf_token" id="csrfToken" value="">
+                            <input type="hidden" name="g-recaptcha-response" id="recaptchaToken" value="">
+                            <input type="hidden" name="form_source" value="contact">
+                            <!-- Honeypot field - hidden from real users -->
+                            <div style="position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                                <label for="website">Leave this empty</label>
+                                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+                            </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name *</label>

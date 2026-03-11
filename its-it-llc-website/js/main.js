@@ -290,37 +290,89 @@ function initSmoothScroll() {
 }
 
 /**
- * Contact Form Handler
+ * Contact Form Handler - AJAX submission with reCAPTCHA v3
  */
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    if (!form) return;
 
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Fetch CSRF token on page load
+    fetchCSRFToken();
 
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-            // Basic validation
-            if (!data.name || !data.email || !data.message) {
-                showNotification('Please fill in all required fields.', 'error');
-                return;
+        // Client-side validation
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        if (!data.name || !data.email || !data.message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Disable submit button and show sending state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnHTML = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending... <span class="arrow">→</span>';
+
+        // Get reCAPTCHA v3 token
+        const siteKey = form.dataset.recaptchaKey;
+        try {
+            const recaptchaToken = await grecaptcha.execute(siteKey, { action: 'contact_form' });
+            document.getElementById('recaptchaToken').value = recaptchaToken;
+        } catch (err) {
+            showNotification('Security verification failed. Please refresh and try again.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+            return;
+        }
+
+        // Submit via AJAX
+        try {
+            const response = await fetch('php/contact-handler.php', {
+                method: 'POST',
+                body: new FormData(form),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                showNotification(result.message, 'success');
+                form.reset();
+                fetchCSRFToken(); // Get new token for potential next submission
+            } else {
+                showNotification(result.message || 'Something went wrong. Please try again.', 'error');
             }
+        } catch (err) {
+            showNotification('Unable to send message. Please call us at (239) 935-9891.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+        }
+    });
+}
 
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Here you would normally send the data to a server
-            // For now, we'll just show a success message
-            showNotification('Thank you for your message! We\'ll be in touch soon.', 'success');
-            form.reset();
-        });
+/**
+ * Fetch CSRF token from server and inject into form
+ */
+async function fetchCSRFToken() {
+    try {
+        const response = await fetch('php/csrf-token.php');
+        const data = await response.json();
+        const tokenField = document.getElementById('csrfToken');
+        if (tokenField && data.token) {
+            tokenField.value = data.token;
+        }
+    } catch (err) {
+        // CSRF fetch failed - form will still work on hosts without PHP (dev/preview)
     }
 }
 
