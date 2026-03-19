@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="POS systems, PCI compliance, and customer WiFi for retail and hospitality businesses in Southwest Florida. IT's IT LLC keeps your transactions secure and customers happy.">
+    <title>Retail & Hospitality IT Solutions | IT's IT Solutions</title>
+    <link rel="stylesheet" href="css/styles.css?v=34">
+    <link rel="stylesheet" href="css/icons.css?v=6">
+    <link rel="icon" type="image/png" href="assets/logos/ItsITLogo9_11_19.png">
+</head>
+<body>
+    <div class="client-portal-overlay" id="clientPortalOverlay"></div>
+    <aside class="client-portal-sidebar" id="clientPortalSidebar">
+        <div class="client-portal-header"><img src="assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions"><button class="client-portal-close" id="clientPortalClose" aria-label="Close client portal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+        <h3>CLIENT PORTAL</h3>
+        <nav class="client-portal-nav">
+            <a href="https://itsitllc.ITClientPortal.com/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Client Account Access</a>
+            <a href="https://helpit.screenconnect.com/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Remote Help</a>
+            <a href="https://itsitllc.connectboosterportal.com/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>Pay Invoice</a>
+            <a href="https://store.itsitllc.com/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>Store</a>
+            <a href="https://phones.itsitllc.com/login" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Phone Web Portal</a>
+            <a href="https://app.inkyphishfence.com/user-settings/summary" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Spam Filter</a>
+            <a href="https://itsitllc.itglue.com/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>IT Glue</a>
+        </nav>
+    </aside>
+    <button class="client-portal-toggle" id="clientPortalToggle" aria-label="Open client portal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Client Portal</span></button>
+
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html"><img src="assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions"></a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="services.html">Services <span class="dropdown-icon">▼</span></a><div class="mega-menu"><div class="mega-menu-grid"><a href="services.html#managed-services" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-shield"></use></svg></div><div class="content"><h4>Managed IT Services</h4><p>Complete IT management and monitoring 24/7/365</p></div></a><a href="services.html#cybersecurity" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-lock"></use></svg></div><div class="content"><h4>Cybersecurity</h4><p>Protect your business from threats and breaches</p></div></a><a href="services.html#network-engineering" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-network"></use></svg></div><div class="content"><h4>Network Engineering</h4><p>Design and maintain your business networks</p></div></a><a href="services.html#help-desk" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-headset"></use></svg></div><div class="content"><h4>Help Desk & Remote Support</h4><p>Fast, responsive IT troubleshooting</p></div></a><a href="services.html#disaster-recovery" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-cloud-backup"></use></svg></div><div class="content"><h4>Disaster Recovery & Backups</h4><p>Keep your data safe and recoverable</p></div></a><a href="services.html#it-consulting" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-lightbulb"></use></svg></div><div class="content"><h4>IT Consulting</h4><p>Strategic technology guidance for growth</p></div></a><a href="services.html#cio-cto" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-executive"></use></svg></div><div class="content"><h4>On-Demand CIO/CTO</h4><p>Executive-level IT leadership on demand</p></div></a><a href="services.html#telecommunications" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-phone"></use></svg></div><div class="content"><h4>Telecommunications</h4><p>Phone systems and communication solutions</p></div></a></div></div></li>
+                <li><a href="industries.html">Industries <span class="dropdown-icon">▼</span></a><div class="mega-menu"><div class="mega-menu-grid industries-grid"><a href="industry-healthcare.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-healthcare"></use></svg></div><div class="content"><h4>Healthcare & Medical</h4></div></a><a href="industry-legal.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-legal"></use></svg></div><div class="content"><h4>Legal & Law Firms</h4></div></a><a href="industry-financial.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-financial"></use></svg></div><div class="content"><h4>Financial Services</h4></div></a><a href="industry-manufacturing.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-manufacturing"></use></svg></div><div class="content"><h4>Manufacturing</h4></div></a><a href="industry-construction.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-construction"></use></svg></div><div class="content"><h4>Construction</h4></div></a><a href="industry-nonprofit.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-nonprofit"></use></svg></div><div class="content"><h4>Non-Profit</h4></div></a><a href="industry-retail.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-retail"></use></svg></div><div class="content"><h4>Retail & Hospitality</h4></div></a><a href="industry-realestate.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-realestate"></use></svg></div><div class="content"><h4>Real Estate</h4></div></a><a href="industry-professional.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="assets/icons/icons.svg#icon-professional"></use></svg></div><div class="content"><h4>Professional Services</h4></div></a></div></div></li>
+                <li><a href="about.html">About <span class="dropdown-icon">▼</span></a><div class="dropdown-menu"><a href="about.html#our-story">Our Story</a><a href="about.html#mission-vision">Mission & Vision</a><a href="about.html#team">Our Team</a><a href="about.html#partners">Partners</a></div></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta"><a href="tel:239-935-9891" class="nav-phone"><span class="nav-phone-icon"><svg><use href="assets/icons/icons.svg#icon-phone"></use></svg></span><span>239-935-9891</span></a><a href="contact.html" class="btn btn-primary">Get Started</a></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="industries.html">Industries</a><span>/</span><span class="current">Retail & Hospitality</span></div>
+                <h1>IT Solutions for <span class="highlight">Retail & Hospitality</span></h1>
+                <p>Keep your point-of-sale running, your customers happy, and your payment data secure.</p>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="service-step">
+                    <div class="service-step-content">
+                        <span class="section-label">Retail & Hospitality IT</span>
+                        <h2>Keep Customers Happy and <span class="highlight">Transactions Secure</span></h2>
+                        <p>Retail and hospitality businesses run on technology — point-of-sale systems, inventory management, reservations, customer WiFi, and back-office operations all need to work seamlessly. When your POS goes down during a busy Saturday or your guest WiFi fails, the customer experience suffers and revenue walks out the door.</p>
+                        <p style="margin-top: var(--spacing-md);">IT's IT provides Southwest Florida retail and hospitality businesses with reliable, PCI-compliant technology that keeps operations running smoothly and customer data protected.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: var(--spacing-lg);">Talk to a Retail IT Specialist <span class="arrow">→</span></a>
+                    </div>
+                    <div class="service-step-image">
+                        <div style="background: linear-gradient(135deg, var(--color-green), var(--color-blue)); padding: 4rem; border-radius: 12px; text-align: center;">
+                            <span style="display: block; color: white;"><svg style="width: 5rem; height: 5rem;"><use href="assets/icons/icons.svg#icon-retail"></use></svg></span>
+                            <h4 style="color: white; margin-top: 1rem;">PCI Compliant</h4>
+                            <p style="color: rgba(255,255,255,0.8); margin-top: 0.5rem;">Protecting every transaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" style="background-color: var(--color-dark);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Pain Points We Solve</span>
+                    <h2>IT Challenges Retail & Hospitality <span class="highlight">Businesses Face</span></h2>
+                </div>
+                <div class="services-grid" style="margin-top: var(--spacing-xl);">
+                    <div class="service-card">
+                        <div class="icon"><svg><use href="assets/icons/icons.svg#icon-retail"></use></svg></div>
+                        <h3>POS System Failures</h3>
+                        <p>A down register during peak hours is a direct hit to revenue and customer satisfaction. We provide proactive monitoring and rapid response to keep your point-of-sale systems running when you need them most.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><svg><use href="assets/icons/icons.svg#icon-lock"></use></svg></div>
+                        <h3>PCI DSS Compliance</h3>
+                        <p>Any business that accepts credit cards must meet PCI DSS requirements. Non-compliance can result in fines, increased processing fees, and liability for card fraud. We help you get and stay compliant.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><svg><use href="assets/icons/icons.svg#icon-network"></use></svg></div>
+                        <h3>Customer WiFi Security</h3>
+                        <p>Offering guest WiFi is expected in hospitality — but improperly configured networks can expose your business systems to attack. We design segmented networks that keep guest and business traffic separate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="service-step">
+                    <div class="service-step-content">
+                        <span class="section-label">Our Solutions</span>
+                        <h2>How We Serve <span class="highlight">Retail & Hospitality Businesses</span></h2>
+                        <ul style="color: var(--color-text-muted); margin: var(--spacing-lg) 0; padding-left: 1.5rem; line-height: 2;">
+                            <li>POS system support, integration, and rapid repair</li>
+                            <li>PCI DSS compliance assessment and remediation</li>
+                            <li>Inventory and property management system support</li>
+                            <li>Segmented customer and guest WiFi networks</li>
+                            <li>Network design for retail and hospitality environments</li>
+                            <li>Cybersecurity for payment card data</li>
+                            <li>Staff device management and access controls</li>
+                            <li>E-commerce platform integration and support</li>
+                            <li>Backup and recovery for sales and reservation data</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Schedule a Free Assessment <span class="arrow">→</span></a>
+                    </div>
+                    <div class="service-step-image">
+                        <div style="background-color: var(--color-dark-lighter, #1e2a3a); border: 1px solid var(--color-border, #2a3a4a); padding: 2.5rem; border-radius: 12px;">
+                            <h3 style="color: var(--color-green); margin-bottom: var(--spacing-md);">PCI DSS Compliance Includes</h3>
+                            <ul style="color: var(--color-text-muted); padding-left: 1.5rem; line-height: 2.2;">
+                                <li>Cardholder data protection</li>
+                                <li>Network segmentation</li>
+                                <li>Access controls and authentication</li>
+                                <li>Regular vulnerability scanning</li>
+                                <li>Security awareness training</li>
+                                <li>Incident response planning</li>
+                                <li>Annual compliance reporting support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" style="background-color: var(--color-dark);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Relevant Services</span>
+                    <h2>Services Most Used by <span class="highlight">Retail & Hospitality Clients</span></h2>
+                </div>
+                <div class="services-grid" style="margin-top: var(--spacing-xl);">
+                    <div class="service-card">
+                        <div class="icon"><svg><use href="assets/icons/icons.svg#icon-network"></use></svg></div>
+                        <h3>Network Engineering</h3>
+                        <p>Retail and hospitality networks require careful design — segregating POS systems, back-office, and guest WiFi while keeping everything fast and reliable.</p>
+                        <a href="services.html#network-engineering" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><svg><use href="assets/icons/icons.svg#icon-lock"></use></svg></div>
+                        <h3>Cybersecurity</h3>
+                        <p>Protect payment data and customer information with endpoint security, network monitoring, and PCI-aligned security controls.</p>
+                        <a href="services.html#cybersecurity" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><svg><use href="assets/icons/icons.svg#icon-shield"></use></svg></div>
+                        <h3>Managed IT Services</h3>
+                        <p>Proactive monitoring that catches POS issues, network problems, and system failures before they interrupt your operations or cost you customers.</p>
+                        <a href="services.html#managed-services" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Protect Your Business and Your Customers</h2>
+                <p>A free technology assessment identifies your PCI compliance gaps and system vulnerabilities before they become expensive problems.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-outline">Request a Free Assessment <span class="arrow">→</span></a>
+                    <a href="tel:239-935-9891" class="btn btn-outline">Call 239-935-9891</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><div class="logo"><img src="assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions"></div><p>We keep your business running while you focus on running your business. Serving Cape Coral, Fort Myers, Naples, and all of Southwest Florida.</p><div class="social-links"><a href="https://www.facebook.com/ItsITLLC" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon"><svg><use href="assets/icons/icons.svg#icon-facebook"></use></svg></a><a href="https://www.linkedin.com/company/it's-it-llc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon"><svg><use href="assets/icons/icons.svg#icon-linkedin"></use></svg></a></div></div>
+                <div class="footer-column"><h4>Services</h4><ul class="footer-links"><li><a href="services.html#managed-services">Managed IT</a></li><li><a href="services.html#cybersecurity">Cybersecurity</a></li><li><a href="services.html#network-engineering">Network Engineering</a></li><li><a href="services.html#help-desk">Help Desk</a></li><li><a href="services.html#disaster-recovery">Disaster Recovery</a></li></ul></div>
+                <div class="footer-column"><h4>Industries</h4><ul class="footer-links"><li><a href="industry-healthcare.html">Healthcare</a></li><li><a href="industry-legal.html">Legal</a></li><li><a href="industry-financial.html">Financial Services</a></li><li><a href="industry-manufacturing.html">Manufacturing</a></li><li><a href="industries.html">All Industries</a></li></ul></div>
+                <div class="footer-column"><h4>Contact</h4><ul class="footer-links"><li><a href="tel:239-935-9891">239-935-9891</a></li><li><a href="mailto:GetStarted@ItsITLLC.com">GetStarted@ItsITLLC.com</a></li><li>2503 Del Prado Blvd S<br>Suite 405<br>Cape Coral, FL 33904</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 IT's IT LLC. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
