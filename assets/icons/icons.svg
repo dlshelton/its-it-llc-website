@@ -28,11 +28,11 @@
     <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
   </symbol>
 
-  <!-- Cloud Upload - Disaster Recovery (Lucide: arrow below cloud) -->
+  <!-- Cloud Recovery - Disaster Recovery (arrow below cloud pointing down) -->
   <symbol id="icon-cloud-backup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
-    <path d="M12 12v9"/>
-    <path d="m16 16-4-4-4 4"/>
+    <path d="M12 14v8"/>
+    <path d="m8 18 4 4 4-4"/>
   </symbol>
 
   <!-- Lightbulb - IT Consulting -->

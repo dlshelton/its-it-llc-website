@@ -974,9 +974,9 @@ main {
 .partners-track {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xl);
     animation: scroll-partners 30s linear infinite;
     width: max-content;
+    will-change: transform;
 }
 
 .partners-track:hover {
@@ -997,7 +997,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-xl);
 }
 
 .partner-logo img {
@@ -1289,7 +1289,6 @@ main {
 .process-card {
     text-align: center;
     padding: var(--spacing-lg);
-    cursor: pointer;
     transition: all var(--transition-normal);
 }
 
@@ -1639,6 +1638,16 @@ main {
 }
 
 .contact-item a {
+    color: var(--color-green-light);
+}
+
+a.contact-item-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.contact-item-link:hover h4 {
     color: var(--color-green-light);
 }
 
