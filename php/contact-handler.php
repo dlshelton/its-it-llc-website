@@ -29,9 +29,17 @@ if (!file_exists($configFile)) {
 }
 $config = require $configFile;
 
+// Harden session cookies
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 1);
+ini_set('session.cookie_samesite', 'Strict');
+ini_set('session.use_strict_mode', 1);
+
 // Start session for CSRF
 session_start();
 header('Content-Type: application/json');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
 
 // ============================================
 // Step 1: Request method check
@@ -130,7 +138,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // Service field validation (allow-list)
 $validServices = ['', 'managed-it', 'cybersecurity', 'network', 'help-desk',
                   'disaster-recovery', 'consulting', 'cio-cto', 'telecom',
-                  'free-analysis', 'other'];
+                  'ai-consulting', 'managed-ai', 'free-analysis', 'other'];
 if (!empty($service) && !in_array($service, $validServices, true)) {
     http_response_code(422);
     echo json_encode(['success' => false, 'message' => 'Invalid service selection.']);
@@ -308,6 +316,8 @@ function buildEmailHTML(string $name, string $email, string $phone, string $comp
             'consulting'        => 'IT Consulting',
             'cio-cto'           => 'On-Demand CIO/CTO',
             'telecom'           => 'Telecommunications',
+            'ai-consulting'     => 'AI Consulting & Strategy',
+            'managed-ai'        => 'Managed AI Services',
             'free-analysis'     => 'Free Technology Analysis',
             'other'             => 'Other',
         ];

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://www.google.com/maps/; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google.com/recaptcha/; font-src 'self';">
     <meta name="description" content="Contact IT's IT LLC - Get in touch for IT services in Cape Coral, Fort Myers, Naples and Southwest Florida. Call 239-935-9891.">
     <title>Contact Us | IT's IT Solutions</title>
     <link rel="stylesheet" href="css/styles.css?v=36">
@@ -414,22 +416,22 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name *</label>
-                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required maxlength="200">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email *</label>
-                                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                    <input type="email" id="email" name="email" placeholder="your@email.com" required maxlength="254">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="(239) 000-0000">
+                                    <input type="tel" id="phone" name="phone" placeholder="(239) 000-0000" maxlength="30">
                                 </div>
                                 <div class="form-group">
                                     <label for="company">Company</label>
-                                    <input type="text" id="company" name="company" placeholder="Your company name">
+                                    <input type="text" id="company" name="company" placeholder="Your company name" maxlength="200">
                                 </div>
                             </div>
 
@@ -454,7 +456,7 @@
 
                             <div class="form-group">
                                 <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your IT needs or questions..." required></textarea>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your IT needs or questions..." required maxlength="5000"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary" style="width: 100%;">

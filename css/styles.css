@@ -1615,13 +1615,13 @@ main {
     transition: all var(--transition-fast);
 }
 
-.contact-item:hover .icon {
+.contact-item-link:hover .icon {
     background-color: var(--color-green);
     border-color: var(--color-green);
     color: var(--color-white);
 }
 
-.contact-item:hover .icon svg {
+.contact-item-link:hover .icon svg {
     stroke: var(--color-white);
 }
 

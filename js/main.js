@@ -78,7 +78,11 @@ function loadSVGSprite() {
             const container = document.createElement('div');
             container.id = 'svg-sprite-container';
             container.style.display = 'none';
-            container.innerHTML = svgContent;
+            // Parse SVG safely using DOMParser instead of innerHTML
+            const parser = new DOMParser();
+            const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+            const svgEl = svgDoc.querySelector('svg');
+            if (svgEl) container.appendChild(svgEl);
             document.body.insertBefore(container, document.body.firstChild);
 
             // Update all SVG use elements to reference local IDs
@@ -145,7 +149,10 @@ function tryFallbackPaths() {
                 const container = document.createElement('div');
                 container.id = 'svg-sprite-container';
                 container.style.display = 'none';
-                container.innerHTML = svgContent;
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+                const svgEl = svgDoc.querySelector('svg');
+                if (svgEl) container.appendChild(svgEl);
                 document.body.insertBefore(container, document.body.firstChild);
                 updateSVGReferences();
             })
@@ -387,12 +394,17 @@ function showNotification(message, type = 'info') {
     if (existing) existing.remove();
 
     // Create notification element
+    const validTypes = ['success', 'error', 'info'];
+    const safeType = validTypes.includes(type) ? type : 'info';
     const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <span>${message}</span>
-        <button class="notification-close">&times;</button>
-    `;
+    notification.className = `notification notification-${safeType}`;
+    const msgSpan = document.createElement('span');
+    msgSpan.textContent = message;
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'notification-close';
+    closeBtn.textContent = '\u00D7';
+    notification.appendChild(msgSpan);
+    notification.appendChild(closeBtn);
 
     // Add styles
     notification.style.cssText = `
@@ -400,7 +412,7 @@ function showNotification(message, type = 'info') {
         top: 100px;
         right: 20px;
         padding: 1rem 1.5rem;
-        background-color: ${type === 'success' ? '#006341' : type === 'error' ? '#dc2626' : '#003865'};
+        background-color: ${safeType === 'success' ? '#006341' : safeType === 'error' ? '#dc2626' : '#003865'};
         color: white;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -430,7 +442,6 @@ function showNotification(message, type = 'info') {
     document.body.appendChild(notification);
 
     // Close button handler
-    const closeBtn = notification.querySelector('.notification-close');
     closeBtn.style.cssText = `
         background: none;
         border: none;
