@@ -615,7 +615,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
-    align-items: start;
+    align-items: center;
     position: relative;
     z-index: 1;
 }
@@ -1169,19 +1169,18 @@ main {
 
 /* Services Grid - Max 3 columns for balanced layout */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-lg);
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Enforce 3-column max on large screens */
-@media (min-width: 1000px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.services-grid > * {
+    flex: 0 1 calc(33.333% - var(--spacing-lg));
+    min-width: 300px;
 }
 
 .service-card {
