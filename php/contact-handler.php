@@ -246,10 +246,19 @@ function checkRateLimit(string $ip, array $config): bool
     $file = $dir . md5($ip) . '.json';
     $now  = time();
 
-    $timestamps = [];
-    if (file_exists($file)) {
-        $timestamps = json_decode(file_get_contents($file), true) ?: [];
+    // Use exclusive file lock to prevent race condition
+    $fp = fopen($file, 'c+');
+    if (!$fp) {
+        return true; // fail open if file can't be created
     }
+
+    if (!flock($fp, LOCK_EX)) {
+        fclose($fp);
+        return true;
+    }
+
+    $contents = stream_get_contents($fp);
+    $timestamps = !empty($contents) ? (json_decode($contents, true) ?: []) : [];
 
     // Purge entries older than the window
     $timestamps = array_values(array_filter($timestamps, function ($t) use ($now, $config) {
@@ -257,11 +266,21 @@ function checkRateLimit(string $ip, array $config): bool
     }));
 
     if (count($timestamps) >= $config['max_submissions']) {
+        flock($fp, LOCK_UN);
+        fclose($fp);
         return false;
     }
 
     $timestamps[] = $now;
-    file_put_contents($file, json_encode($timestamps), LOCK_EX);
+
+    // Truncate and write
+    ftruncate($fp, 0);
+    rewind($fp);
+    fwrite($fp, json_encode($timestamps));
+    fflush($fp);
+
+    flock($fp, LOCK_UN);
+    fclose($fp);
     return true;
 }
 
