@@ -1,8 +1,11 @@
 /* ============================================
    IT's IT LLC - Main Stylesheet
    Brand Colors: Green #006341, Blue #003865, Gray #585858
-   Font: Lucida Fax Demibold (fallback: system fonts)
+   Fonts: Poppins (body), Jost (headings)
    ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* CSS Reset & Base Styles */
 *,
@@ -22,7 +25,7 @@
     --color-gray: #585858;
     --color-gray-light: #b0b0b0;
 
-    /* Dark Theme Colors - Lightened for better feel */
+    /* Dark Theme Colors */
     --color-dark: #141d2b;
     --color-dark-lighter: #1e2a3a;
     --color-dark-card: #243044;
@@ -42,10 +45,10 @@
     --color-text-light: #ffffff;
     --color-text-muted: #94a3b8;
 
-    /* Typography */
-    --font-primary: 'Lucida Fax', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-    --font-secondary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    --font-size-base: 16px;
+    /* Typography — Poppins body, Jost headings (NexusIT-inspired) */
+    --font-primary: 'Jost', 'Lucida Fax', Georgia, serif;
+    --font-secondary: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: clamp(15px, 0.938vw, 18px);
     --line-height-base: 1.6;
 
     /* Spacing */
@@ -61,10 +64,10 @@
     --header-height: 80px;
     --header-height-scrolled: 70px;
 
-    /* Transitions */
-    --transition-fast: 150ms ease;
-    --transition-normal: 300ms ease;
-    --transition-slow: 500ms ease;
+    /* Transitions — slightly slower for polish */
+    --transition-fast: 200ms ease;
+    --transition-normal: 400ms ease;
+    --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -75,12 +78,17 @@
 }
 
 html {
-    font-size: var(--font-size-base);
+    font-size: 16px;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
     font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    font-weight: 400;
     line-height: var(--line-height-base);
     color: var(--color-text-light);
     background-color: var(--color-dark);
@@ -174,22 +182,26 @@ body.page-loaded footer {
     }
 }
 
-/* Typography */
+/* Typography — Fluid clamp() scaling */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: var(--spacing-md);
     font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: 1.25rem; }
+h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.35rem, 2.2vw, 1.85rem); }
+h4 { font-size: clamp(1.1rem, 1.5vw, 1.4rem); }
+h5 { font-size: clamp(1rem, 1.2vw, 1.2rem); font-weight: 500; }
+h6 { font-size: clamp(0.875rem, 1vw, 1rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 
 p {
     margin-bottom: var(--spacing-md);
     color: var(--color-text-muted);
+    font-weight: 400;
 }
 
 a {
@@ -206,6 +218,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    vertical-align: middle;
 }
 
 /* Layout */
@@ -478,14 +491,20 @@ header.scrolled {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-sm);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     border-radius: 4px;
+    font-family: var(--font-secondary);
     font-weight: 600;
+    font-size: clamp(0.85rem, 0.9vw, 0.95rem);
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--transition-normal);
     border: 2px solid transparent;
-    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .btn-primary {
@@ -494,11 +513,28 @@ header.scrolled {
     border-color: var(--color-green);
 }
 
+/* NexusIT-inspired gradient slide-in hover */
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-green-light), var(--color-accent-teal));
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: -1;
+}
+
 .btn-primary:hover {
-    background-color: var(--color-green-light);
     border-color: var(--color-green-light);
     color: var(--color-white);
     box-shadow: var(--shadow-glow-green);
+}
+
+.btn-primary:hover::after {
+    transform: translateX(0);
 }
 
 .btn-secondary {
@@ -1112,13 +1148,16 @@ main {
 .section-header .section-label {
     color: var(--color-green-light);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-family: var(--font-secondary);
+    font-size: clamp(0.7rem, 0.8vw, 0.85rem);
+    font-weight: 600;
     margin-bottom: var(--spacing-md);
 }
 
 .section-header h2 {
     color: var(--color-white);
+    font-family: var(--font-primary);
 }
 
 .section-header h2 .highlight {
@@ -1188,13 +1227,13 @@ main {
     border: 1px solid var(--color-dark-border);
     border-radius: 12px;
     padding: var(--spacing-lg);
-    transition: all var(--transition-normal);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-card:hover {
     border-color: var(--color-green);
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-glow-green);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 99, 65, 0.2), var(--shadow-glow-green);
 }
 
 .service-card .icon {
@@ -2140,11 +2179,11 @@ footer {
    ENHANCED ANIMATIONS & EFFECTS
    ============================================ */
 
-/* Fade-in on scroll animation */
+/* Fade-in on scroll — NexusIT-inspired easing */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
@@ -2155,8 +2194,8 @@ footer {
 /* Staggered animation delays */
 .fade-in-delay-1 { transition-delay: 0.1s; }
 .fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-.fade-in-delay-4 { transition-delay: 0.4s; }
+.fade-in-delay-3 { transition-delay: 0.35s; }
+.fade-in-delay-4 { transition-delay: 0.5s; }
 
 /* Pulse animation for CTAs */
 @keyframes pulse {
