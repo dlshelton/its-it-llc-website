@@ -297,14 +297,11 @@ function initSmoothScroll() {
 }
 
 /**
- * Contact Form Handler - AJAX submission with reCAPTCHA v3
+ * Contact Form Handler - AJAX submission via Formspree
  */
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
-
-    // Fetch CSRF token on page load
-    fetchCSRFToken();
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -330,35 +327,21 @@ function initContactForm() {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending... <span class="arrow">→</span>';
 
-        // Get reCAPTCHA v3 token (skip if grecaptcha not loaded, e.g. test mode)
-        const siteKey = form.dataset.recaptchaKey;
-        if (typeof grecaptcha !== 'undefined' && siteKey && !siteKey.includes('YOUR_')) {
-            try {
-                const recaptchaToken = await grecaptcha.execute(siteKey, { action: 'contact_form' });
-                document.getElementById('recaptchaToken').value = recaptchaToken;
-            } catch (err) {
-                showNotification('Security verification failed. Please refresh and try again.', 'error');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnHTML;
-                return;
-            }
-        }
-
-        // Submit via AJAX
+        // Submit to Formspree via AJAX
         try {
-            const response = await fetch('php/contact-handler.php', {
+            const response = await fetch(form.action, {
                 method: 'POST',
-                body: new FormData(form),
+                body: formData,
+                headers: { 'Accept': 'application/json' },
             });
 
-            const result = await response.json();
-
-            if (result.success) {
-                showNotification(result.message, 'success');
+            if (response.ok) {
+                showNotification('Thank you! We\'ve received your message and will be in touch soon.', 'success');
                 form.reset();
-                fetchCSRFToken(); // Get new token for potential next submission
             } else {
-                showNotification(result.message || 'Something went wrong. Please try again.', 'error');
+                const result = await response.json();
+                const errorMsg = (result.errors && result.errors.map(e => e.message).join(', ')) || 'Something went wrong. Please try again.';
+                showNotification(errorMsg, 'error');
             }
         } catch (err) {
             showNotification('Unable to send message. Please call us at (239) 935-9891.', 'error');
@@ -367,22 +350,6 @@ function initContactForm() {
             submitBtn.innerHTML = originalBtnHTML;
         }
     });
-}
-
-/**
- * Fetch CSRF token from server and inject into form
- */
-async function fetchCSRFToken() {
-    try {
-        const response = await fetch('php/csrf-token.php');
-        const data = await response.json();
-        const tokenField = document.getElementById('csrfToken');
-        if (tokenField && data.token) {
-            tokenField.value = data.token;
-        }
-    } catch (err) {
-        // CSRF fetch failed - form will still work on hosts without PHP (dev/preview)
-    }
 }
 
 /**
