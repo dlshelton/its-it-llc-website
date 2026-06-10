@@ -17,6 +17,10 @@ Disallow: /category/
 Disallow: /tag/
 Disallow: /author/
 
+# Block admin and auth
+Disallow: /admin/
+Disallow: /auth/
+
 # Block non-public directories
 Disallow: /php/
 Disallow: /assets/Profiles/

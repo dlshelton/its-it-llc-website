@@ -1,0 +1,31 @@
+name: Build Blog
+
+on:
+  push:
+    paths:
+      - 'blog/_posts/**'
+      - '.github/scripts/build-blog.mjs'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install gray-matter marked
+
+      - name: Build blog HTML
+        run: node .github/scripts/build-blog.mjs
+
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Build blog HTML from markdown sources"
+          file_pattern: "blog.html blog/*.html"

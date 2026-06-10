@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: dlshelton/its-it-llc-website
+  branch: main
+  base_url: https://www.itsitllc.com
+  auth_endpoint: auth
+
+media_folder: "assets/Photos/blog"
+public_folder: "/assets/Photos/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog/_posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Dennis Shelton" }
+      - { label: "Description", name: "description", widget: "text", hint: "Short summary for blog card and SEO (1-2 sentences)" }
+      - { label: "Read Time", name: "read_time", widget: "string", default: "5 min read" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Image Alt Text", name: "image_alt", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "list", default: ["Technology"] }
+      - { label: "Download File", name: "download_file", widget: "file", required: false, hint: "Optional gated PDF download" }
+      - { label: "Download Title", name: "download_title", widget: "string", required: false }
+      - { label: "Download Description", name: "download_description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

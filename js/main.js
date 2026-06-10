@@ -15,7 +15,68 @@ document.addEventListener('DOMContentLoaded', function() {
     initFadeInAnimations();
     initClientPortal();
     initContentProtection();
+    initBlogDownload();
 });
+
+function initBlogDownload() {
+    var downloadBtn = document.getElementById('downloadBtn');
+    var modal = document.getElementById('downloadModal');
+    var modalClose = document.getElementById('downloadModalClose');
+    var form = document.getElementById('downloadForm');
+    if (!downloadBtn || !modal || !form) return;
+
+    var filePath = form.getAttribute('data-download-file') || '';
+    var fileName = form.getAttribute('data-download-name') || 'download.pdf';
+
+    downloadBtn.addEventListener('click', function() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    modalClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var btnText = form.querySelector('.btn-text');
+        var btnLoading = form.querySelector('.btn-loading');
+        var submitBtn = form.querySelector('.blog-download-submit');
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        try {
+            var response = await fetch(form.action, {
+                method: 'POST', body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                var link = document.createElement('a');
+                link.href = filePath;
+                link.download = fileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                var card = document.querySelector('.blog-download-card');
+                card.innerHTML = '<div class="blog-download-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div><h3>Thank You!</h3><p>Your download should begin automatically. If not, <a href="' + filePath + '" download="' + fileName + '">click here to download</a>.</p>';
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (err) {
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            alert('Something went wrong. Please try again or contact us at 239-935-9891.');
+        }
+    });
+}
 
 /**
  * Content Protection

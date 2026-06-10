@@ -23,6 +23,9 @@ Thumbs.db
 php/config.php
 php/rate_limit_data/*.json
 
+# OAuth secrets (GitHub OAuth App credentials)
+auth/config.php
+
 # Logs
 *.log
 npm-debug.log*
