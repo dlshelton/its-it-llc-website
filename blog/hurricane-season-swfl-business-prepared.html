@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; font-src 'self'; frame-ancestors 'none';">
+    <meta name="description" content="Hurricane season in Southwest Florida: practical technology preparedness steps every business should take to protect data, stay connected, and maintain operations.">
+    <meta name="keywords" content="hurricane preparedness, business continuity, Southwest Florida, IT disaster recovery, cloud backup, Cape Coral, Fort Myers, Naples">
+    <meta name="author" content="Dennis Shelton">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hurricane Season in Southwest Florida: Is Your Business Actually Prepared?">
+    <meta property="og:description" content="Technology preparedness is one of the most overlooked aspects of hurricane planning. Practical steps every business should take to protect data, stay connected, and maintain operations.">
+    <meta property="og:image" content="https://www.itsitllc.com/assets/Photos/blog/office-hurricane-prep.jpg">
+    <meta property="og:url" content="https://www.itsitllc.com/blog/hurricane-season-swfl-business-prepared.html">
+    <meta property="og:site_name" content="IT's IT Solutions">
+    <meta property="article:published_time" content="2026-06-10">
+    <meta property="article:author" content="Dennis Shelton">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hurricane Season in Southwest Florida: Is Your Business Actually Prepared?">
+    <meta name="twitter:description" content="Technology preparedness is one of the most overlooked aspects of hurricane planning. Practical steps every business should take.">
+    <meta name="twitter:image" content="https://www.itsitllc.com/assets/Photos/blog/office-hurricane-prep.jpg">
+    <title>Hurricane Season in Southwest Florida: Is Your Business Actually Prepared? | IT's IT Solutions</title>
+    <link rel="canonical" href="https://www.itsitllc.com/blog/hurricane-season-swfl-business-prepared.html">
+    <link rel="stylesheet" href="../css/styles.css?v=37">
+    <link rel="stylesheet" href="../css/icons.css?v=6">
+    <link rel="icon" type="image/png" href="../assets/logos/ItsITLogo9_11_19.png">
+</head>
+<body>
+    <!-- Client Portal Sidebar -->
+    <div class="client-portal-overlay" id="clientPortalOverlay"></div>
+    <aside class="client-portal-sidebar" id="clientPortalSidebar">
+        <div class="client-portal-header">
+            <img src="../assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions">
+            <button class="client-portal-close" id="clientPortalClose" aria-label="Close client portal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <h3>CLIENT PORTAL</h3>
+        <nav class="client-portal-nav">
+            <a href="https://itsitllc.ITClientPortal.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Client Account Access
+            </a>
+            <a href="https://helpit.screenconnect.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Remote Help
+            </a>
+            <a href="https://itsitllc.connectboosterportal.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                Pay Invoice
+            </a>
+            <a href="https://store.itsitllc.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Store
+            </a>
+            <a href="https://phones.itsitllc.com/login" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Phone Web Portal
+            </a>
+            <a href="https://app.inkyphishfence.com/user-settings/summary" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Spam Filter
+            </a>
+            <a href="https://itsitllc.itglue.com/" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                IT Glue
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Client Portal Toggle Button -->
+    <button class="client-portal-toggle" id="clientPortalToggle" aria-label="Open client portal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Client Portal</span>
+    </button>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions">
+                </a>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="../services.html">
+                        Services
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="../service-managed-it.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-shield"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Managed IT Services</h4>
+                                    <p>Complete IT management and monitoring 24/7/365</p>
+                                </div>
+                            </a>
+                            <a href="../service-cybersecurity.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-lock"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Cybersecurity</h4>
+                                    <p>Protect your business from threats and breaches</p>
+                                </div>
+                            </a>
+                            <a href="../service-network-engineering.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-network"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Network Engineering</h4>
+                                    <p>Design and maintain your business networks</p>
+                                </div>
+                            </a>
+                            <a href="../service-help-desk.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-headset"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Help Desk & Remote Support</h4>
+                                    <p>Fast, responsive IT troubleshooting</p>
+                                </div>
+                            </a>
+                            <a href="../service-disaster-recovery.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-cloud-backup"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Disaster Recovery & Backups</h4>
+                                    <p>Keep your data safe and recoverable</p>
+                                </div>
+                            </a>
+                            <a href="../service-it-consulting.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-lightbulb"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>IT Consulting</h4>
+                                    <p>Strategic technology guidance for growth</p>
+                                </div>
+                            </a>
+                            <a href="../service-cio-cto.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-executive"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>On-Demand CIO/CTO</h4>
+                                    <p>Executive-level IT leadership on demand</p>
+                                </div>
+                            </a>
+                            <a href="../service-telecommunications.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-phone"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Telecommunications</h4>
+                                    <p>Phone systems and communication solutions</p>
+                                </div>
+                            </a>
+                            <a href="../service-ai-consulting.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-ai-consulting"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>AI Consulting & Strategy</h4>
+                                    <p>AI readiness assessments and roadmaps</p>
+                                </div>
+                            </a>
+                            <a href="../service-managed-ai.html" class="mega-menu-item">
+                                <div class="mega-menu-icon">
+                                    <svg><use href="../assets/icons/icons.svg#icon-managed-ai"></use></svg>
+                                </div>
+                                <div class="content">
+                                    <h4>Managed AI Services</h4>
+                                    <p>AI deployment, training, and optimization</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="../industries.html">
+                        Industries
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid industries-grid">
+                            <a href="../industry-healthcare.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-healthcare"></use></svg></div><div class="content"><h4>Healthcare & Medical</h4></div></a>
+                            <a href="../industry-legal.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-legal"></use></svg></div><div class="content"><h4>Legal & Law Firms</h4></div></a>
+                            <a href="../industry-financial.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-financial"></use></svg></div><div class="content"><h4>Financial Services</h4></div></a>
+                            <a href="../industry-manufacturing.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-manufacturing"></use></svg></div><div class="content"><h4>Manufacturing</h4></div></a>
+                            <a href="../industry-construction.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-construction"></use></svg></div><div class="content"><h4>Construction</h4></div></a>
+                            <a href="../industry-nonprofit.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-nonprofit"></use></svg></div><div class="content"><h4>Non-Profit</h4></div></a>
+                            <a href="../industry-retail.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-retail"></use></svg></div><div class="content"><h4>Retail & Hospitality</h4></div></a>
+                            <a href="../industry-realestate.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-realestate"></use></svg></div><div class="content"><h4>Real Estate</h4></div></a>
+                            <a href="../industry-professional.html" class="mega-menu-item"><div class="mega-menu-icon"><svg><use href="../assets/icons/icons.svg#icon-professional"></use></svg></div><div class="content"><h4>Professional Services</h4></div></a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="../about.html">
+                        About
+                        <span class="dropdown-icon">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../about.html#our-story">Our Story</a>
+                        <a href="../about.html#mission-vision">Mission & Vision</a>
+                        <a href="../about.html#team">Our Team</a>
+                        <a href="../about.html#partners">Partners</a>
+                        <a href="../terms.html">Terms of Service</a>
+                    </div>
+                </li>
+
+                <li><a href="../blog.html">Blog</a></li>
+
+                <li>
+                    <a href="../contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="tel:239-935-9891" class="nav-phone">
+                    <span class="nav-phone-icon">
+                        <svg><use href="../assets/icons/icons.svg#icon-phone"></use></svg>
+                    </span>
+                    <span>239-935-9891</span>
+                </a>
+                <a href="../contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+    <!-- Blog Post Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../blog.html">Blog</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Hurricane Season Preparedness</span>
+            </nav>
+            <h1>Hurricane Season in Southwest Florida: Is Your Business Actually Prepared?</h1>
+            <div class="blog-meta">
+                <span class="blog-meta-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
+                    Dennis Shelton
+                </span>
+                <span class="blog-meta-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    June 10, 2026
+                </span>
+                <span class="blog-meta-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    8 min read
+                </span>
+                <span class="blog-category-tag">Cybersecurity</span>
+                <span class="blog-category-tag">Business Continuity</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <article class="blog-article">
+        <div class="container">
+            <div class="blog-content">
+
+                <div class="blog-hero-image">
+                    <img src="../assets/Photos/blog/office-hurricane-prep.jpg" alt="Office packed up with boxes, monitor, and equipment - business hurricane preparedness">
+                </div>
+
+                <p class="blog-lead">Every year, hurricane season arrives in Southwest Florida with a familiar sense of uncertainty. Business owners stock up on supplies, review evacuation routes, and prepare their buildings for severe weather. But while many companies focus on physical preparation, one critical area is often overlooked: <strong>technology preparedness</strong>.</p>
+
+                <p>In today's business environment, technology is no longer just a support system &mdash; it is the backbone of daily operations. From customer communication and payroll to scheduling, accounting, cloud platforms, and internal files, nearly every part of a business depends on reliable access to technology.</p>
+
+                <p>The reality is this:</p>
+
+                <blockquote>
+                    <p>A hurricane doesn't have to physically destroy your office to disrupt your business.</p>
+                </blockquote>
+
+                <p>A prolonged power outage, internet failure, damaged hardware, or inaccessible files can bring operations to a halt long before floodwaters ever arrive.</p>
+
+                <p>For businesses throughout Fort Myers, Cape Coral, Naples, Bonita Springs, and the surrounding Southwest Florida communities, hurricane preparedness should include a technology continuity plan &mdash; not just storm shutters and generators.</p>
+
+                <h2>Why Hurricane Preparedness Looks Different for Businesses Today</h2>
+
+                <p>Ten or fifteen years ago, many businesses could survive a temporary office closure with minimal disruption. Employees worked primarily in-office, records were paper-based, and customer communication was less dependent on digital systems.</p>
+
+                <p>Today, that is no longer the case. Modern businesses rely heavily on:</p>
+
+                <ul>
+                    <li>Cloud-based platforms</li>
+                    <li>Email communication</li>
+                    <li>Digital records</li>
+                    <li>Online payment systems</li>
+                    <li>Remote access tools</li>
+                    <li>VoIP phone systems</li>
+                    <li>Shared drives and servers</li>
+                    <li>Cybersecurity systems</li>
+                    <li>Vendor and client portals</li>
+                </ul>
+
+                <p>If those systems become inaccessible, even temporarily, the impact can be significant. For many companies, downtime means:</p>
+
+                <ul>
+                    <li>Lost revenue</li>
+                    <li>Delayed projects</li>
+                    <li>Missed customer communication</li>
+                    <li>Interrupted payroll or billing</li>
+                    <li>Reduced employee productivity</li>
+                    <li>Potential data loss</li>
+                </ul>
+
+                <p>That's why proactive technology planning is one of the most important investments a business can make before hurricane season intensifies.</p>
+
+                <h2>The Most Common Technology Risks During Hurricane Season</h2>
+
+                <p>Many Southwest Florida businesses are surprised to learn that the greatest technology risks often happen <em>after</em> the storm &mdash; not during it.</p>
+
+                <h3>Power Outages</h3>
+                <p>Extended power outages can damage hardware, interrupt backups, and leave businesses unable to access critical systems. Without proper surge protection, battery backups, or cloud redundancy, even a short outage can create operational problems.</p>
+
+                <h3>Internet & Communication Failures</h3>
+                <p>When internet access goes down, businesses may lose access to email systems, cloud software, customer communication tools, VoIP phone systems, and remote applications. For businesses without communication backup plans, employees and customers are often left without direction.</p>
+
+                <h3>Hardware Damage</h3>
+                <p>Flooding, humidity, power surges, and physical storm damage can permanently damage servers, desktop computers, networking equipment, backup drives, and security systems. If your business only stores files locally, recovery can become extremely difficult.</p>
+
+                <h3>Remote Work Challenges</h3>
+                <p>One of the biggest lessons businesses learned in recent years is that flexibility matters. If your office suddenly becomes inaccessible, can your employees continue working remotely? Many businesses assume they can &mdash; until they realize employees cannot access files, applications, or internal systems from outside the office.</p>
+
+                <h2>Why Cloud Backups Matter More Than Ever</h2>
+
+                <p>One of the most important components of hurricane preparedness is ensuring your business data is protected. Unfortunately, many businesses still rely too heavily on local storage or outdated backup systems.</p>
+
+                <p>A common misconception is: <em>"We back everything up to the server."</em> But what happens if the server itself is damaged?</p>
+
+                <p>Modern backup strategies typically include a combination of:</p>
+
+                <ul>
+                    <li><strong>Local Backups</strong> &mdash; Fast recovery for smaller issues and day-to-day file restoration.</li>
+                    <li><strong>Cloud Backups</strong> &mdash; Encrypted copies stored securely offsite, allowing recovery even if physical hardware is damaged.</li>
+                    <li><strong>Redundant Systems</strong> &mdash; Layered systems that provide multiple recovery options for added protection and faster restoration.</li>
+                </ul>
+
+                <p>The goal is not just to "have a backup." The goal is to ensure your business can continue operating with minimal disruption.</p>
+
+                <h2>Can Your Team Work Remotely Tomorrow?</h2>
+
+                <p>One of the easiest ways to evaluate your hurricane preparedness is to ask a simple question:</p>
+
+                <blockquote>
+                    <p>"If our office lost power tomorrow, could our team still operate?"</p>
+                </blockquote>
+
+                <p>For many businesses, the honest answer is "partially" or "we're not sure."</p>
+
+                <p>A strong business continuity plan should allow employees to securely access email, shared files, business applications, communication platforms, and customer systems from virtually anywhere. This often includes tools such as:</p>
+
+                <ul>
+                    <li>Secure cloud platforms</li>
+                    <li>Remote desktop access</li>
+                    <li>VPN solutions</li>
+                    <li>Microsoft 365 or Google Workspace systems</li>
+                    <li>VoIP forwarding</li>
+                    <li>Mobile communication platforms</li>
+                </ul>
+
+                <p>The businesses that recover fastest after storms are usually the businesses that planned for flexibility before the storm arrived.</p>
+
+                <h2>Cybersecurity Risks Increase During Storm Events</h2>
+
+                <p>Another area many businesses overlook during hurricane season is cybersecurity. Unfortunately, cybercriminals often take advantage of emergencies and high-stress situations.</p>
+
+                <p>After major storms, businesses frequently see increases in:</p>
+
+                <ul>
+                    <li>Phishing emails</li>
+                    <li>Fake invoices</li>
+                    <li>Fraudulent payment requests</li>
+                    <li>Scam donation campaigns</li>
+                    <li>Credential theft attempts</li>
+                </ul>
+
+                <p>Employees working remotely or under pressure are more likely to click suspicious links or overlook security warnings. That's why hurricane preparedness should also include multi-factor authentication (MFA), updated passwords, employee cybersecurity training, secure remote access systems, and verified backup systems.</p>
+
+                <p>Protecting your business during hurricane season is not just about physical recovery &mdash; it is also about digital protection.</p>
+
+                <h2>Practical Steps Southwest Florida Businesses Can Take Now</h2>
+
+                <p>The good news is that businesses do not need to completely rebuild their infrastructure overnight. Small proactive improvements can make a significant difference.</p>
+
+                <div class="blog-steps-grid">
+                    <div class="blog-step">
+                        <h3>Review Your Backup Systems</h3>
+                        <p>Verify what is being backed up, where backups are stored, how frequently backups occur, and how quickly data can be restored.</p>
+                    </div>
+                    <div class="blog-step">
+                        <h3>Test Remote Access</h3>
+                        <p>Make sure employees can securely access systems outside the office before an emergency occurs.</p>
+                    </div>
+                    <div class="blog-step">
+                        <h3>Update Employee Contact Information</h3>
+                        <p>Ensure communication systems are current and employees know where to receive updates.</p>
+                    </div>
+                    <div class="blog-step">
+                        <h3>Protect Hardware</h3>
+                        <p>Use surge protection, battery backup systems (UPS), and elevated equipment storage when possible.</p>
+                    </div>
+                    <div class="blog-step">
+                        <h3>Review Cybersecurity Policies</h3>
+                        <p>Reinforce security awareness before storm-related phishing attempts increase.</p>
+                    </div>
+                    <div class="blog-step">
+                        <h3>Create an IT Emergency Plan</h3>
+                        <p>Your team should know who to contact, how systems are restored, where files are located, and how communication will continue during outages.</p>
+                    </div>
+                </div>
+
+                <h2>Hurricane Preparedness Is Really About Business Continuity</h2>
+
+                <p>At the end of the day, hurricane preparedness is not simply about technology. It is about protecting your business operations, your employees, your customers, and your ability to continue serving your community when disruptions happen.</p>
+
+                <p>The businesses that recover fastest are rarely the businesses that "got lucky." They are the businesses that planned ahead.</p>
+
+                <p>At IT's IT, we help Southwest Florida businesses build proactive technology strategies that support business continuity before, during, and after storm season. From cloud solutions and backup systems to remote work readiness and cybersecurity planning, our goal is simple: help businesses stay productive, even when the unexpected happens.</p>
+
+                <!-- Gated Download Section -->
+                <div class="blog-download-section" id="downloadSection">
+                    <div class="blog-download-card">
+                        <div class="blog-download-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <polyline points="9 15 12 18 15 15"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Download the Free Hurricane Tech Preparedness Guide</h3>
+                        <p>Get our complete Southwest Florida Business Hurricane Tech Preparedness Guide with a business continuity checklist, backup recommendations, remote work preparation tips, cybersecurity reminders, and technology recovery planning suggestions.</p>
+                        <button class="btn btn-primary blog-download-btn" id="downloadBtn" type="button">
+                            Download Free Guide
+                            <span class="arrow">&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gated Download Modal -->
+                <div class="blog-download-modal-overlay" id="downloadModal">
+                    <div class="blog-download-modal">
+                        <button class="blog-download-modal-close" id="downloadModalClose" type="button" aria-label="Close">&times;</button>
+                        <h3>Get Your Free Hurricane Tech Preparedness Guide</h3>
+                        <p>Fill out the form below and your download will begin immediately.</p>
+                        <form id="downloadForm" action="https://formspree.io/f/mvznbpwl" method="POST">
+                            <input type="hidden" name="_subject" value="Blog Download: Hurricane Tech Preparedness Guide">
+                            <input type="hidden" name="_source" value="blog-hurricane-prep-download">
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                            <div class="blog-form-group">
+                                <label for="dl-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="dl-name" name="name" required placeholder="John Smith">
+                            </div>
+                            <div class="blog-form-group">
+                                <label for="dl-email">Business Email <span class="required">*</span></label>
+                                <input type="email" id="dl-email" name="email" required placeholder="john@company.com">
+                            </div>
+                            <div class="blog-form-group">
+                                <label for="dl-company">Company Name</label>
+                                <input type="text" id="dl-company" name="company" placeholder="Company Name">
+                            </div>
+                            <div class="blog-form-group">
+                                <label for="dl-phone">Phone Number</label>
+                                <input type="tel" id="dl-phone" name="phone" placeholder="(239) 555-1234">
+                            </div>
+                            <button type="submit" class="btn btn-primary blog-download-submit">
+                                <span class="btn-text">Download Guide</span>
+                                <span class="btn-loading" style="display:none;">Sending...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="blog-cta-section">
+                    <h2>Ready to Prepare Your Business?</h2>
+                    <p>Contact IT's IT today to schedule a complimentary technology preparedness review for your business.</p>
+                    <a href="https://outlook.office.com/book/DennisLSheltonJRITsITLLC@itsitllc.onmicrosoft.com/s/lXet7rXd30CNtkkvJQq7xQ2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Schedule Your Free Assessment <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <img src="../assets/logos/ItsITLogo9_11_19.png" alt="IT's IT Solutions" class="footer-logo">
+                    <p>Your Dedicated IT Department. Proactive. Predictable. Built for Growth.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ItsITLLC" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                            <svg><use href="../assets/icons/icons.svg#icon-facebook"></use></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/it's-it-llc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                            <svg><use href="../assets/icons/icons.svg#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../service-managed-it.html">Managed IT</a></li>
+                        <li><a href="../service-cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../service-network-engineering.html">Network Engineering</a></li>
+                        <li><a href="../service-ai-consulting.html">AI Consulting</a></li>
+                        <li><a href="../service-managed-ai.html">Managed AI</a></li>
+                        <li><a href="../services.html">All Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="../industry-healthcare.html">Healthcare</a></li>
+                        <li><a href="../industry-legal.html">Legal</a></li>
+                        <li><a href="../industry-financial.html">Financial Services</a></li>
+                        <li><a href="../industry-manufacturing.html">Manufacturing</a></li>
+                        <li><a href="../industries.html">All Industries</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:239-935-9891">239-935-9891</a></li>
+                        <li><a href="mailto:GetStarted@ItsITLLC.com">GetStarted@ItsITLLC.com</a></li>
+                        <li>2503 Del Prado Blvd S<br>Suite 405<br>Cape Coral, FL 33904</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 IT's IT LLC. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+    (function() {
+        var downloadBtn = document.getElementById('downloadBtn');
+        var modal = document.getElementById('downloadModal');
+        var modalClose = document.getElementById('downloadModalClose');
+        var form = document.getElementById('downloadForm');
+
+        if (downloadBtn && modal) {
+            downloadBtn.addEventListener('click', function() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                var btnText = form.querySelector('.btn-text');
+                var btnLoading = form.querySelector('.btn-loading');
+                var submitBtn = form.querySelector('.blog-download-submit');
+                submitBtn.disabled = true;
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline';
+
+                try {
+                    var response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                        var link = document.createElement('a');
+                        link.href = 'downloads/hurricane-tech-preparedness-guide.pdf';
+                        link.download = 'ItsIT-Hurricane-Tech-Preparedness-Guide.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        var card = document.querySelector('.blog-download-card');
+                        card.innerHTML = '<div class="blog-download-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div><h3>Thank You!</h3><p>Your download should begin automatically. If not, <a href="downloads/hurricane-tech-preparedness-guide.pdf" download="ItsIT-Hurricane-Tech-Preparedness-Guide.pdf">click here to download</a>.</p>';
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (err) {
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    alert('Something went wrong. Please try again or contact us at 239-935-9891.');
+                }
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

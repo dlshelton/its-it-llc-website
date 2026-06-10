@@ -1,0 +1,26 @@
+# IT's IT LLC - robots.txt
+User-agent: *
+Allow: /
+
+# Block old WordPress paths (site migrated to static)
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /wp-json/
+Disallow: /feed/
+Disallow: /xmlrpc.php
+Disallow: /faq
+Disallow: /faq/
+Disallow: /?s=
+Disallow: /category/
+Disallow: /tag/
+Disallow: /author/
+
+# Block non-public directories
+Disallow: /php/
+Disallow: /assets/Profiles/
+Disallow: /assets/OldWebAssets/
+Disallow: /assets/marketingStuff/
+
+Sitemap: https://www.itsitllc.com/sitemap.xml

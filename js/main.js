@@ -14,7 +14,61 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initFadeInAnimations();
     initClientPortal();
+    initContentProtection();
 });
+
+/**
+ * Content Protection
+ * Disables right-click context menu, text selection, and copy/paste site-wide
+ */
+function initContentProtection() {
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable text selection via mouse drag
+    document.addEventListener('selectstart', function(e) {
+        // Allow selection in form inputs and textareas
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable copy
+    document.addEventListener('copy', function(e) {
+        // Allow copy in form inputs and textareas
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable cut
+    document.addEventListener('cut', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        e.preventDefault();
+        return false;
+    });
+
+    // Block common keyboard shortcuts for copying/selecting/viewing source
+    document.addEventListener('keydown', function(e) {
+        // Allow normal typing in inputs/textareas
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        // Block Ctrl+C, Ctrl+A, Ctrl+U (view source), Ctrl+S (save), Ctrl+P (print)
+        if (e.ctrlKey && ['c','a','u','s','p'].includes(e.key.toLowerCase())) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Block F12 (dev tools)
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+    });
+}
 
 /**
  * Page Loader Animation
