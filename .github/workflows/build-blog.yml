@@ -30,23 +30,18 @@ jobs:
           commit_message: "Build blog HTML from markdown sources"
           file_pattern: "blog.html blog/*.html"
 
-      - name: Deploy to GoDaddy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/
-          local-dir: ./
-          include: |
-            blog.html
-            blog/*.html
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/_posts/**
-            .github/**
-            admin/**
-            auth/**
-            blog/_posts/**
+      - name: Deploy blog to GoDaddy via FTP
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+          set ssl:verify-certificate no
+          set ftp:ssl-allow yes
+          put -O / blog.html
+          mkdir -p /blog
+          mput -O /blog blog/*.html
+          bye
+          EOF
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
