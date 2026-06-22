@@ -29,3 +29,24 @@ jobs:
         with:
           commit_message: "Build blog HTML from markdown sources"
           file_pattern: "blog.html blog/*.html"
+
+      - name: Deploy to GoDaddy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/
+          local-dir: ./
+          include: |
+            blog.html
+            blog/*.html
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/_posts/**
+            .github/**
+            admin/**
+            auth/**
+            blog/_posts/**
