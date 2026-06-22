@@ -2935,7 +2935,7 @@ footer {
 
 .blog-card-image {
     position: relative;
-    height: 220px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -2943,6 +2943,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     transition: transform var(--transition-slow);
     pointer-events: auto;
 }
@@ -3079,8 +3080,8 @@ footer {
 .blog-hero-image img {
     width: 100%;
     height: auto;
-    max-height: 200px;
-    object-fit: cover;
+    max-height: 500px;
+    object-fit: contain;
     border-radius: 12px;
     pointer-events: auto;
 }
@@ -3359,7 +3360,7 @@ footer {
     }
 
     .blog-card-image {
-        height: 180px;
+        height: 220px;
     }
 
     .blog-content {
