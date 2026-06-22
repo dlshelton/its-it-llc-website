@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'blog/_posts/**'
+      - 'assets/Photos/blog/**'
       - '.github/scripts/build-blog.mjs'
 
 jobs:
@@ -47,6 +48,8 @@ jobs:
             put -O / blog.html;
             mkdir -p /blog;
             mput -O /blog blog/*.html;
+            mkdir -p /assets/Photos/blog;
+            mput -O /assets/Photos/blog assets/Photos/blog/*;
             bye
           " $FTP_SERVER
         env:
