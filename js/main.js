@@ -146,7 +146,7 @@ function initPageLoader() {
         loader.innerHTML = `
             <div class="loader-content">
                 <div class="loader-logo">
-                    <img src="assets/logos/ItsITLogo9_11_19.png" alt="Loading...">
+                    <img src="/assets/logos/ItsITLogo9_11_19.png" alt="Loading...">
                 </div>
                 <div class="loader-spinner"></div>
             </div>
