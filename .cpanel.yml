@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jk0riza9np0e/public_html
+    - /usr/bin/rsync -a --exclude '.git' --exclude '.github' --exclude '.claude' --exclude '.cpanel.yml' --exclude '.gitignore' --exclude '.gitattributes' --exclude 'blog/_posts' --exclude 'node_modules' --exclude 'PROJECT_NOTES.md' --exclude 'php/config.php' --exclude 'auth/config.php' --exclude 'assets/marketingStuff' --exclude 'assets/branding' --exclude 'assets/OldWebAssets' --exclude 'assets/Profiles' --exclude 'assets/webassets' /home/jk0riza9np0e/repos/its-it-llc-website/ /home/jk0riza9np0e/public_html/

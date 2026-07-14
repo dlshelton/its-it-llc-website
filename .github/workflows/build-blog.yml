@@ -32,46 +32,7 @@ jobs:
           commit_message: "Build blog HTML from markdown sources"
           file_pattern: "blog.html blog/*.html"
 
-      - name: Deploy blog to GoDaddy via FTP
-        run: |
-          sudo apt-get install -y lftp
-          echo "=== Diagnostics ==="
-          echo "FTP_SERVER length: ${#FTP_SERVER}"
-          echo "FTP_USERNAME length: ${#FTP_USERNAME}"
-          echo "FTP_PASSWORD length: ${#FTP_PASSWORD}"
-          getent hosts "$FTP_SERVER" || echo "DNS resolution FAILED"
-          timeout 20 bash -c "cat < /dev/tcp/$FTP_SERVER/21" | head -1 || echo "TCP connect to port 21 FAILED"
-          cat > ~/.netrc <<NETRC
-          machine $FTP_SERVER
-          login $FTP_USERNAME
-          password $FTP_PASSWORD
-          NETRC
-          chmod 600 ~/.netrc
-          for attempt in 1 2 3; do
-            echo "=== FTP deploy attempt $attempt ==="
-            if lftp -e "
-              debug 3;
-              set ssl:verify-certificate no;
-              set ftp:ssl-allow yes;
-              set net:timeout 30;
-              set net:max-retries 2;
-              set net:reconnect-interval-base 5;
-              put -O / blog.html;
-              mkdir -p /blog;
-              mput -O /blog blog/*.html;
-              mkdir -p /assets/Photos/blog;
-              mput -O /assets/Photos/blog assets/Photos/blog/*;
-              bye
-            " "$FTP_SERVER"; then
-              echo "=== Deploy succeeded on attempt $attempt ==="
-              exit 0
-            fi
-            echo "=== Attempt $attempt failed, waiting 30s ==="
-            sleep 30
-          done
-          echo "::error::FTP deploy failed after 3 attempts"
-          exit 1
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      # Deployment to GoDaddy is pull-based: a cPanel cron job fetches this
+      # repo and deploys via .cpanel.yml. GoDaddy's firewall drops FTP
+      # connections from GitHub-hosted runners, so push-based FTP deploy
+      # is not viable.
