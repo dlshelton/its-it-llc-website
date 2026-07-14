@@ -8,6 +8,11 @@ backend:
 media_folder: "assets/Photos/blog"
 public_folder: "/assets/Photos/blog"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: "blog"
     label: "Blog Posts"
