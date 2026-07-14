@@ -6,7 +6,7 @@ description: |
   Fathers Day Celebration to Business owners.
 read_time: 5 min read
 featured_image: /assets/Photos/blog/fathersday.png
-image_alt: Your Business Technology Parters
+image_alt: Your Business Technology Partners
 categories:
   - Technology
 ---
