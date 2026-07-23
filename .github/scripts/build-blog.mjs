@@ -283,7 +283,7 @@ function generatePostHtml(post) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; font-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.searchatlas.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.searchatlas.com https://formspree.io; font-src 'self'; frame-ancestors 'none';">
     <meta name="description" content="${shortDesc}">
     <meta name="author" content="${post.author || 'Dennis Shelton'}">
     <meta property="og:type" content="article">
@@ -303,6 +303,7 @@ function generatePostHtml(post) {
     <link rel="stylesheet" href="${p}css/styles.css?v=37">
     <link rel="stylesheet" href="${p}css/icons.css?v=6">
     <link rel="icon" type="image/png" href="${p}assets/logos/ItsITLogo9_11_19.png">
+    <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="f29bf1a5-4de2-4f9e-bfb5-71be68c7e5cd" src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"></script>
 </head>
 <body>
 ${nav(p)}
@@ -400,7 +401,7 @@ function generateIndexHtml(posts) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formspree.io; font-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.searchatlas.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.searchatlas.com https://formspree.io; font-src 'self'; frame-ancestors 'none';">
     <meta name="description" content="IT's IT LLC Blog - Technology insights, cybersecurity tips, business continuity strategies, and IT best practices for Southwest Florida businesses.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="IT's IT Blog - Technology Insights for Southwest Florida Businesses">
@@ -413,6 +414,7 @@ function generateIndexHtml(posts) {
     <link rel="stylesheet" href="css/styles.css?v=37">
     <link rel="stylesheet" href="css/icons.css?v=6">
     <link rel="icon" type="image/png" href="assets/logos/ItsITLogo9_11_19.png">
+    <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="f29bf1a5-4de2-4f9e-bfb5-71be68c7e5cd" src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"></script>
 </head>
 <body>
 ${nav(p)}
