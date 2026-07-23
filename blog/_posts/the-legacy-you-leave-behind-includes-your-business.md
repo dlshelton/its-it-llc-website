@@ -5,7 +5,7 @@ author: Dennis Shelton
 description: |
   Fathers Day Celebration to Business owners.
 read_time: 5 min read
-featured_image: /assets/Photos/blog/fathersday.png
+featured_image: /assets/Photos/blog/fathersday.webp
 image_alt: Your Business Technology Partners
 categories:
   - Technology

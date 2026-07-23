@@ -268,7 +268,7 @@ function generatePostHtml(post) {
         .map(c => `<span class="blog-category-tag">${c}</span>`).join('\n                ');
 
     const heroHtml = post.featured_image
-        ? `\n                <div class="blog-hero-image">\n                    <img src="${post.featured_image.startsWith('/') ? '..' + post.featured_image : post.featured_image}" alt="${post.image_alt || ''}">\n                </div>\n`
+        ? `\n                <div class="blog-hero-image">\n                    <img src="${post.featured_image.startsWith('/') ? '..' + post.featured_image : post.featured_image}" alt="${post.image_alt || ''}" fetchpriority="high" decoding="async">\n                </div>\n`
         : '';
 
     const ogImage = post.featured_image
@@ -379,7 +379,7 @@ function generateIndexHtml(posts) {
         return `
                 <a href="blog/${post.slug}.html" class="blog-card">
                     <div class="blog-card-image">
-                        <img src="${imgSrc}" alt="${post.image_alt || post.title}">
+                        <img src="${imgSrc}" alt="${post.image_alt || post.title}" loading="lazy" decoding="async">
                         ${badge}
                     </div>
                     <div class="blog-card-content">
