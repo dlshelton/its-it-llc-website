@@ -5,7 +5,7 @@ on:
     paths:
       - 'blog/_posts/**'
       - 'assets/Photos/blog/**'
-      - '.github/scripts/build-blog.mjs'
+      - '.github/scripts/**'
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install gray-matter marked
+        run: npm install gray-matter marked sharp
+
+      - name: Optimize CMS-uploaded images
+        run: node .github/scripts/optimize-blog-images.mjs
 
       - name: Build blog HTML
         run: node .github/scripts/build-blog.mjs
@@ -30,7 +33,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Build blog HTML from markdown sources"
-          file_pattern: "blog.html blog/*.html"
+          file_pattern: "blog.html blog/*.html blog/_posts/*.md assets/Photos/blog/*"
 
       # Deployment to GoDaddy is pull-based: a cPanel cron job fetches this
       # repo and deploys via .cpanel.yml. GoDaddy's firewall drops FTP
