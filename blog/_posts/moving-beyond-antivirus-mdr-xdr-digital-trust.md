@@ -6,6 +6,7 @@ description: Basic defense is no longer enough. Here is how MDR, XDR, and
   Digital Trust differ, why they matter to your bottom line, and how to choose
   the right strategy for your organization.
 read_time: 6 min read
+featured_image: /assets/Photos/blog/august2026.jpg
 categories:
   - Cybersecurity
   - MDR
