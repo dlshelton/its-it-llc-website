@@ -300,7 +300,7 @@ function generatePostHtml(post) {
     <meta name="twitter:image" content="${ogImage}">
     <title>${post.title} | IT's IT Solutions</title>
     <link rel="canonical" href="https://www.itsitllc.com/blog/${post.slug}.html">
-    <link rel="stylesheet" href="${p}css/styles.css?v=37">
+    <link rel="stylesheet" href="${p}css/styles.css?v=38">
     <link rel="stylesheet" href="${p}css/icons.css?v=6">
     <link rel="icon" type="image/png" href="${p}assets/logos/ItsITLogo9_11_19.png">
     <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="f29bf1a5-4de2-4f9e-bfb5-71be68c7e5cd" src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"></script>
@@ -411,7 +411,7 @@ function generateIndexHtml(posts) {
     <meta property="og:site_name" content="IT's IT Solutions">
     <title>Blog | IT's IT Solutions</title>
     <link rel="canonical" href="https://www.itsitllc.com/blog.html">
-    <link rel="stylesheet" href="css/styles.css?v=37">
+    <link rel="stylesheet" href="css/styles.css?v=38">
     <link rel="stylesheet" href="css/icons.css?v=6">
     <link rel="icon" type="image/png" href="assets/logos/ItsITLogo9_11_19.png">
     <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="f29bf1a5-4de2-4f9e-bfb5-71be68c7e5cd" src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"></script>
