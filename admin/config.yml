@@ -5,6 +5,11 @@ backend:
   base_url: https://www.itsitllc.com
   auth_endpoint: auth
 
+# Drafts: Save creates a draft (GitHub branch + PR) instead of publishing.
+# Workflow tab in the CMS shows Draft / In Review / Ready columns;
+# only clicking Publish merges to main and triggers the live build.
+publish_mode: editorial_workflow
+
 media_folder: "assets/Photos/blog"
 public_folder: "/assets/Photos/blog"
 
