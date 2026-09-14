@@ -164,6 +164,7 @@ Ask your potential managed IT provider how they approach areas such as:
 * Software and security updates
 * Network protection
 * Access management
+* Company wide password management
 * Backups
 * Employee security practices
 * Threat monitoring
