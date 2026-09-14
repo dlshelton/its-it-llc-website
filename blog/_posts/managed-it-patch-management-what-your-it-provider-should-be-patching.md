@@ -10,6 +10,7 @@ read_time: 5 min read
 featured_image: ""
 categories:
   - Technology
+download_file: /assets/Photos/blog/shutterstock_2526834797.webp
 ---
 When a managed IT provider tells you, “We handle your updates and patching,” what does that actually mean?
 
