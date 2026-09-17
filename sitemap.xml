@@ -32,4 +32,9 @@
     <!-- Legal -->
     <url><loc>https://www.itsitllc.com/privacy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
     <url><loc>https://www.itsitllc.com/terms.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+    <url>
+        <loc>https://www.itsitllc.com/it-solution-services.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
