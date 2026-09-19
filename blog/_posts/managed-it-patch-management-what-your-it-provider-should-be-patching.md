@@ -1,7 +1,7 @@
 ---
 title: "How to Choose a Managed IT Provider in Southwest Florida: 7 Questions to
   Ask Before You Sign"
-date: 2026-09-19T07:44:00.000-04:00
+date: 2026-09-19T08:17:00.000-04:00
 author: Dennis Shelton
 description: Choosing the right managed IT provider goes beyond comparing
   services and pricing. Discover seven essential questions Southwest Florida
@@ -9,7 +9,7 @@ description: Choosing the right managed IT provider goes beyond comparing
   vendor management, disaster recovery, and accountability before choosing an IT
   provider.
 read_time: 5 min read
-featured_image: /assets/Photos/blog/shutterstock_2663152625.webp
+featured_image: /assets/Photos/blog/shutterstock_2663152625.jpg
 categories:
   - Technology
 download_file: /assets/Photos/blog/shutterstock_2526834797.webp
