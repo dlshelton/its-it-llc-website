@@ -218,4 +218,4 @@ At **It’s IT Solutions**, we work with businesses in Cape Coral and throughout
 
 Whether your company has outgrown reactive IT support, you’re concerned about cybersecurity, or you simply want a clearer technology strategy for the next stage of growth, the first step is understanding where your IT environment stands today.
 
-**Ready to find out whether your current IT setup is supporting your business—or slowing it down? Contact It’s IT Solutions to start the conversation.**
+**Ready to find out whether your current IT setup is supporting your business or slowing it down? Contact It’s IT Solutions to start the conversation.**
