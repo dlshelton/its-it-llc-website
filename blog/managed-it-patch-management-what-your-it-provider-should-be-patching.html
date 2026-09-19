@@ -354,6 +354,23 @@
 
 
 
+                <div class="blog-download-section" id="downloadSection">
+                    <div class="blog-download-card">
+                        <div class="blog-download-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <polyline points="9 15 12 18 15 15"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Download Free Guide</h3>
+                        <p></p>
+                        <button class="btn btn-primary blog-download-btn" id="downloadBtn" type="button">
+                            Download Free Guide <span class="arrow">&rarr;</span>
+                        </button>
+                    </div>
+                </div>
 
                 <div class="blog-cta-section">
                     <h2>Ready to Get Started?</h2>
@@ -369,6 +386,38 @@
     </main>
 
 
+    <div class="blog-download-modal-overlay" id="downloadModal">
+        <div class="blog-download-modal">
+            <button class="blog-download-modal-close" id="downloadModalClose" type="button" aria-label="Close">&times;</button>
+            <h3>Get Your Free Guide</h3>
+            <p>Fill out the form below and your download will begin immediately.</p>
+            <form id="downloadForm" action="https://formspree.io/f/mvznbpwl" method="POST" data-download-file="assets/Photos/blog/shutterstock_2526834797.webp" data-download-name="ItsIT-shutterstock_2526834797.webp">
+                <input type="hidden" name="_subject" value="Blog Download: Download Free Guide">
+                <input type="hidden" name="_source" value="blog-managed-it-patch-management-what-your-it-provider-should-be-patching-download">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <div class="blog-form-group">
+                    <label for="dl-name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="dl-name" name="name" required placeholder="John Smith">
+                </div>
+                <div class="blog-form-group">
+                    <label for="dl-email">Business Email <span class="required">*</span></label>
+                    <input type="email" id="dl-email" name="email" required placeholder="john@company.com">
+                </div>
+                <div class="blog-form-group">
+                    <label for="dl-company">Company Name</label>
+                    <input type="text" id="dl-company" name="company" placeholder="Company Name">
+                </div>
+                <div class="blog-form-group">
+                    <label for="dl-phone">Phone Number</label>
+                    <input type="tel" id="dl-phone" name="phone" placeholder="(239) 555-1234">
+                </div>
+                <button type="submit" class="btn btn-primary blog-download-submit">
+                    <span class="btn-text">Download Guide</span>
+                    <span class="btn-loading" style="display:none;">Sending...</span>
+                </button>
+            </form>
+        </div>
+    </div>
 
 
     <footer>
