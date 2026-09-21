@@ -6,8 +6,8 @@ description: Managed IT patching goes far beyond Windows updates. Learn what
   your IT provider should be monitoring, updating and verifying across your
   devices, browsers, firewalls, remote systems and business software—and how to
   spot potential gaps in your coverage.
-read_time: 5 min read
-featured_image: ""
+read_time: 8 min read
+featured_image: /assets/Photos/blog/shutterstock_2526834797.webp
 categories:
   - Technology
 ---
