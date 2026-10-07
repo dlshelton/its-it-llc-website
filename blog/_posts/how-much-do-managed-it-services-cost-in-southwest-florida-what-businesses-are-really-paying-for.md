@@ -1,7 +1,7 @@
 ---
 title: How Much Do Managed IT Services Cost in Southwest Florida? What
   Businesses Are Really Paying For
-date: 2026-09-23T21:03:00.000-04:00
+date: 2026-10-07T09:48:00.000-04:00
 author: Dennis Shelton
 description: How much do Managed IT services really cost? Learn what Southwest
   Florida businesses should consider when comparing IT providers, including
