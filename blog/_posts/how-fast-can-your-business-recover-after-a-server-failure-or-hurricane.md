@@ -7,7 +7,7 @@ description: How quickly could your business recover after a server failure,
   disaster recovery strategy can help Cape Coral businesses reduce downtime,
   restore critical systems, and get employees back to work faster.
 read_time: 5 min read
-featured_image: /assets/Photos/blog/shutterstock_2701002941.jpg
+featured_image: /assets/Photos/blog/shutterstock_2701002941.webp
 categories:
   - Technology
 ---
