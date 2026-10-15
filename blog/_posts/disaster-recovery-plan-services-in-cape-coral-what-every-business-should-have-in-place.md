@@ -8,7 +8,7 @@ description: What happens if your business systems go down tomorrow? Learn what
   recovery, and how Cape Coral businesses can protect critical data, reduce
   downtime, and recover faster when the unexpected happens.
 read_time: 5 min read
-featured_image: /assets/Photos/blog/shutterstock_2728945177.jpg
+featured_image: /assets/Photos/blog/shutterstock_2728945177.webp
 categories:
   - Technology
 ---
