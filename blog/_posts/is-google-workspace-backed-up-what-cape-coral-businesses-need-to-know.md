@@ -7,7 +7,7 @@ description: Is your Google Workspace data really backed up? Learn the
   deleted or accounts are compromised, and what Cape Coral businesses should
   consider when protecting Gmail, Google Drive, and other critical cloud data.
 read_time: 7 min read
-featured_image: /assets/Photos/blog/shutterstock_2350017495.jpg
+featured_image: /assets/Photos/blog/shutterstock_2350017495.webp
 categories:
   - Technology
 ---
