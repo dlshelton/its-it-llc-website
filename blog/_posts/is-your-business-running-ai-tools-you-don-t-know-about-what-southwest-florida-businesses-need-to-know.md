@@ -7,7 +7,7 @@ description: Discover unapproved AI tools in your business, review data access,
   and use a practical checklist to start building responsible AI governance with
   It’s IT.
 read_time: 5 min read
-featured_image: /assets/Photos/blog/shutterstock_2703147861.jpg
+featured_image: /assets/Photos/blog/shutterstock_2703147861.webp
 image_alt: It Company Photo discussing AI systems
 categories:
   - Technology
