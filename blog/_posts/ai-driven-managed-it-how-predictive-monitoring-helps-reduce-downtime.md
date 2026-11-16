@@ -14,7 +14,7 @@ description: >-
 
   Contact It’s IT Solutions to discuss your current IT environment and opportunities to help reduce business interruptions.
 read_time: 5 min read
-featured_image: /assets/Photos/blog/early-it-outage-warning.png
+featured_image: /assets/Photos/blog/early-it-outage-warning.webp
 categories:
   - Technology
 ---
