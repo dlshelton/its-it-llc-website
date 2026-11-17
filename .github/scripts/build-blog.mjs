@@ -300,7 +300,7 @@ function generatePostHtml(post) {
     <meta name="twitter:image" content="${ogImage}">
     <title>${post.title} | IT's IT Solutions</title>
     <link rel="canonical" href="https://www.itsitllc.com/blog/${post.slug}.html">
-    <link rel="stylesheet" href="${p}css/styles.css?v=38">
+    <link rel="stylesheet" href="${p}css/styles.css?v=39">
     <link rel="stylesheet" href="${p}css/icons.css?v=6">
     <link rel="icon" type="image/png" href="${p}assets/logos/ItsITLogo9_11_19.png">
     <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="f29bf1a5-4de2-4f9e-bfb5-71be68c7e5cd" src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"></script>
@@ -345,13 +345,34 @@ ${heroHtml}
 
 ${downloadCard(post)}
 
-                <div class="blog-cta-section">
-                    <h2>Ready to Get Started?</h2>
-                    <p>Contact IT's IT today to schedule a complimentary technology review for your business.</p>
-                    <a href="https://outlook.office.com/book/DennisLSheltonJRITsITLLC@itsitllc.onmicrosoft.com/s/lXet7rXd30CNtkkvJQq7xQ2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        Schedule Your Free Assessment <span class="arrow">&rarr;</span>
-                    </a>
-                </div>
+                <aside class="blog-author-card" aria-label="About the author">
+                    <div class="blog-author-photo">
+                        <img src="${p}assets/Photos/staffphontos/dennis-blog-author.webp" alt="Dennis Shelton, Owner of IT's IT Solutions" width="480" height="544" loading="lazy" decoding="async">
+                    </div>
+                    <div class="blog-author-body">
+                        <p class="blog-author-eyebrow">Your Local Technology Partner</p>
+                        <p class="blog-author-name">Dennis Shelton</p>
+                        <p class="blog-author-title">Owner | IT's IT Solutions</p>
+                        <p class="blog-author-tagline">Practical guidance for smarter, more secure business technology.</p>
+                        <div class="blog-author-actions">
+                            <a href="tel:+12399359891" class="blog-author-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                Call our team
+                            </a>
+                            <a href="mailto:GetStarted@ItsITLLC.com?subject=${encodeURIComponent('Question about: ' + post.title)}" class="blog-author-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg>
+                                Email our team
+                            </a>
+                            <a href="https://outlook.office.com/book/DennisLSheltonJRITsITLLC@itsitllc.onmicrosoft.com/s/lXet7rXd30CNtkkvJQq7xQ2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="blog-author-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                Book a consultation
+                            </a>
+                        </div>
+                        <p class="blog-author-contact">
+                            <a href="tel:+12399359891">239-935-9891</a><span aria-hidden="true"> | </span><a href="mailto:GetStarted@ItsITLLC.com">GetStarted@ItsITLLC.com</a><span aria-hidden="true"> | </span><a href="${p}index.html">itsitllc.com</a>
+                        </p>
+                    </div>
+                </aside>
 
             </div>
         </div>
@@ -411,7 +432,7 @@ function generateIndexHtml(posts) {
     <meta property="og:site_name" content="IT's IT Solutions">
     <title>Blog | IT's IT Solutions</title>
     <link rel="canonical" href="https://www.itsitllc.com/blog.html">
-    <link rel="stylesheet" href="css/styles.css?v=38">
+    <link rel="stylesheet" href="css/styles.css?v=39">
     <link rel="stylesheet" href="css/icons.css?v=6">
     <link rel="icon" type="image/png" href="assets/logos/ItsITLogo9_11_19.png">
     <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="f29bf1a5-4de2-4f9e-bfb5-71be68c7e5cd" src="https://dashboard.searchatlas.com/scripts/dynamic_optimization.js"></script>
